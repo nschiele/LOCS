@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOCS</title>
+
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="cite.js"></script>
+    <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        console.log(getParameterByName('id'))
+
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+        }
+        function addPerson(person) {
+            html = ""
+            html += "<div class='col-md-8 col-sm-12'>"
+            html += "<div class='row mt-2'>"
+            html += '<h1 class="mb-2">'
+            if (person.hasOwnProperty("title")) {
+                html += person.title + " "
+            }
+            html += person.firstname + " "
+            if (person.hasOwnProperty("tussenvoegsel")) {
+                html += person.tussenvoegsel + " "
+            }
+            html += person.lastname
+            html += '</h1>'
+            html += '<h3 class="mt-2">'
+            html += person.position
+            html += '</h3>'
+            if (person.hasOwnProperty("description")) {
+                for (i in person.description) {
+                    html += '<p>'
+                    html += person.description[i]
+                    html += '</p>'
+                }
+            }
+            html += '</div>'
+            html += "<div class='row mt-2' id='pubs'>"
+            html += '</div>'
+            html += '</div>'
+            html += "<div class='col-md-4 d-none d-sm-none d-lg-block'>"
+            html += '<img src="' + person.img + '" style="object-fit: cover;    overflow: hidden; width: 100%">'
+            html += '</div>'
+
+
+
+            $("#person").append(html);
+        }
+
+        var people = []
+        $.getJSON('people.json', function (data) {
+            console.log(data)
+            console.log("loaded json")
+            console.log(people)
+        })
+            .done(function (data) {
+                people = data
+                hierarchy = { 0: [], 1: [], 2: [], 3: [], 4: [] }
+                var person = {}
+                var pageID = getParameterByName('id')
+                for (var i in people) {
+                    if (people[i].id == pageID) {
+                        person = people[i]
+                        console.log(person)
+                    }
+                }
+                addPerson(person)
+
+                $.getJSON('pubs.json', function (data) {
+                    publist = data
+                    console.log(data)
+                })
+                    .done(function (data) {
+                        html = ""
+                        html += "<h3>Publications</h3>"
+                        html += "<ul>"
+                        for (var i in data) {
+                            console.log(data[i].author, person.lastname)
+                            if (data[i].author.toLowerCase().includes(person.lastname.toLowerCase())){
+                                html += "<li>"
+                                html += cite(data[i])
+                                html += "</li>"
+                            }
+                        }
+                        html += "</ul>"
+
+                        $("#pubs").append(html)
+                    });
+
+            });
+
+
+
+
+    </script>
+
+</head>
+
+
+
+
+
+<body>
+    <div class="container">
+        <!--Navigation bar-->
+        <div id="nav-placeholder"></div>
+        <script>
+            $("#nav-placeholder").load("nav.html");
+        </script>
+        <!--end of Navigation bar-->
+
+    </div>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row" id="person">
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+</body>
+
+
+</html>

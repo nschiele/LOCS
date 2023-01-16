@@ -1,10 +1,7 @@
-
-
-
-
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LOCS</title>
@@ -12,124 +9,135 @@
 
     <link href="style.css" rel="stylesheet" type="text/css" />
 
-  
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-  </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+
+        function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+        }
+        function addPerson(person){
+            html = ""
+            html += "<div class='col-xl-3 col-md-4 mb-4'>"
+            html += '<div class="card border-0 shadow  h-100" onclick="location.href=\'person.html?id='+person.id+'\';" style="cursor:pointer;">'
+            html += '<img src="' + person.img+ '" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
+            html += '<div class="card-body text-center">'
+            html += '<h5 class="card-title mb-0">'
+            if(person.hasOwnProperty("title")){
+                html += person.title + " "
+            }
+            html += person.firstname + " "
+            if(person.hasOwnProperty("tussenvoegsel")){
+                html += person.tussenvoegsel + " "
+            }
+            html += person.lastname
+            html += '</h5>'
+            html += '<div class="card-text text-black-50">' + person.position+ '</div>'
+            html += '</div>'
+            html += '</div>'
+            html += '</div>'
+            $("#staff").append(html);
+        }
+
+        var people = []
+        $.getJSON('people.json', function (data) {
+            console.log(data)
+            console.log("loaded json")
+            console.log(people)
+        })
+        .done(function (data){
+            people = data
+            hierarchy = {0:[], 1:[], 2:[], 3:[], 4:[]}
+            for (var i in people) {
+                hierarchy[people[i].order].push(people[i])
+                console.log(hierarchy)
+                // console.log("hello")
+                // addPerson(people[i])
+            }
+            for (let i = 0; i < 5; i++) {
+                if(hierarchy.hasOwnProperty(i)){
+                    // hierarchy[i] = shuffle(hierarchy[i])
+                    for(var j in hierarchy[i]){
+                        console.log(j)
+                        addPerson(hierarchy[i][j])
+                    }
+                }
+            }   
+        });
+
+ 
+    </script>
+
+</head>
 
 
 
 
 
-  <body>
+<body>
     <div class="container">
         <!--Navigation bar-->
         <div id="nav-placeholder"></div>
         <script>
-                $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.html");
         </script>
         <!--end of Navigation bar-->
-    
+
     </div>
 
 
     <!-- Page Content -->
-<div class="container">
-    <div class="row display-flex">
+    <div class="container">
+        <div class="row display-flex" id="staff">
 
 
-      <!-- Olga -->
-      <div class="col-xl-3 col-md-4 mb-4">
-        <div class="card border-0 shadow  h-100" 
-        onclick="location.href='#';" style="cursor:pointer;">
-          <img src="https://www.universiteitleiden.nl/binaries/content/gallery/ul2/portraits/science/g/olga-gadyatskaya.jpg/olga-gadyatskaya.jpg/d200x250" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Dr. Olga Gadyatskaya</h5>
-            <div class="card-text text-black-50">Assistant Professor</div>
-          </div>
         </div>
-      </div>
-
-
-      <!-- Team Member 2 -->
-      <div class="col-xl-3 col-md-4 mb-4">
-        <div class="card border-0 shadow  h-100" 
-        onclick="location.href='#';" style="cursor:pointer;">
-          <img src="https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/nathanschiele.png/nathanschiele.png/d200x250" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Nathan D. Schiele</h5>
-            <div class="card-text text-black-50">PhD Candidate</div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <!-- Team Member 3 -->
-      <div class="col-xl-3 col-md-4 mb-4">
-        <div class="card border-0 shadow  h-100" 
-        onclick="location.href='#';" style="cursor:pointer;">
-          <img src="https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/arina-kudriavtseva.jpg/arina-kudriavtseva.jpg/d200x250" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Arina Kudriavtseva</h5>
-            <div class="card-text text-black-50">PhD Candidate</div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <!-- Team Member 4 -->
-      <div class="col-xl-3 col-md-4 mb-4">
-        
-        <div class="card border-0 shadow  h-100" 
-        onclick="location.href='#';" style="cursor:pointer;">
-          <img src="https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/soufian-el-yadmani.jpg/soufian-el-yadmani.jpg/d200x250" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Soufian El Yadmani</h5>
-            <div class="card-text text-black-50">PhD Candidate</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-md-4 mb-4">
-        <div class="card border-0 shadow h-100" 
-        onclick="location.href='#';" style="cursor:pointer;">
-          <img src="https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/rui-li.jpeg/rui-li.jpeg/d200x250" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Rui Li</h5>
-            <div class="card-text text-black-50">PhD Candidate</div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-xl-3 col-md-4 mb-4">
-        <div class="card border-0 shadow h-100" 
-        onclick="location.href='#';" style="cursor:pointer;">
-          <img src="https://styles.redditmedia.com/t5_2r5i1/styles/communityIcon_x4lqmqzu1hi81.jpg" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Giorgos Bampilis</h5>
-            <div class="card-text text-black-50">PhD Candidate</div>
-          </div>
-        </div>
-      </div>
-
-
-
+        <!-- /.row -->
 
     </div>
-    <!-- /.row -->
-  
-  </div>
-  <!-- /.container -->
+    <!-- /.container -->
 
-    </body>
+</body>
 
-    
+
 </html>
-
-
