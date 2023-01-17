@@ -24,6 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="cite.js"></script>
     <script>
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -36,27 +37,23 @@
         console.log(getParameterByName('sort'))
 
         var publist = []
-        $.getJSON('pubs.json', function (data) {
+        $.getJSON('data/pubs.json', function (data) {
             publist = data
             console.log(data)
         })
         .done(function(data) {
+            h = ""
             for (var i in publist) {
-                $("#pubs").append("<div class='row mt-3'>")
-                $("#pubs").append(publist[i].author + ". ")
-                $("#pubs").append("<b>" + publist[i].title + "</b>. ")
-                if (publist[i].hasOwnProperty("journal")) {
-                    $("#pubs").append("<i>" + publist[i].journal + "</i>")
-                    if (publist[i].hasOwnProperty("publisher")) {
-                        $("#pubs").append(", " + publist[i].publisher + ", ")
-                    } else {
-                        $("#pubs").append(", ")
-                    }
-                }
-                $("#pubs").append(publist[i].year + ". ")
-
-                $("#pubs").append("</div>")
+                console.log(publist[i])
+                h += "<div class='row mt-3'>"
+                h+= "<p>"
+                h += cite(publist[i])
+                h+= "</p>"
+                console.log(cite(publist[i]), publist[i], h)
+                h += "</div>"
+                
             }
+            $("#pubs").append(h)
         });
 
 
@@ -79,7 +76,14 @@
     </div>
 
 
+    <div class="container">
 
+        <!-- Page Heading -->
+        <h1 class="my-4">Publications
+            <small></small>
+        </h1>
+
+    </div>
 
     <div class="container" id="pubs">
 

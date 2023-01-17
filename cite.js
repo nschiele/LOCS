@@ -1,15 +1,15 @@
 function cite(paper){
-    html = ""
-    html += paper.author + ". "
-    html += "<b>" + paper.title + "</b>. "
+    toReturn = ""
+    toReturn += paper.author + ". "
+    toReturn += "<b>" + paper.title + "</b>. "
 if (paper.hasOwnProperty("journal")) {
-    html += "<i>" + paper.journal + "</i>"
+    toReturn += "<i>" + paper.journal + "</i>"
     if (paper.hasOwnProperty("publisher")) {
-        html += ", " + paper.publisher + ", "
+        toReturn += ", " + paper.publisher + ", "
     } else {
-        html += ", "
+        toReturn += ", "
     }
 }
-html += paper.year + ". "
-return html
+toReturn += paper.year + ". "
+return toReturn
 }

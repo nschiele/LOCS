@@ -103,7 +103,7 @@
         }
 
         var people = []
-        $.getJSON('people.json', function (data) {
+        $.getJSON('data/people.json', function (data) {
             console.log(data)
             console.log("loaded json")
             console.log(people)
@@ -121,23 +121,32 @@
                 }
                 addPerson(person)
 
-                $.getJSON('pubs.json', function (data) {
+                $.getJSON('data/pubs.json', function (data) {
                     publist = data
                     console.log(data)
                 })
                     .done(function (data) {
                         html = ""
-                        html += "<h3>Publications</h3>"
-                        html += "<ul>"
+                        count = 0
                         for (var i in data) {
                             console.log(data[i].author, person.lastname)
                             if (data[i].author.toLowerCase().includes(person.lastname.toLowerCase())){
+                                if(count == 0){
+                                    html += "<div class='pl-2'>"
+                                    html += "<ul>"
+                                } 
+                                count += 1
                                 html += "<li>"
                                 html += cite(data[i])
                                 html += "</li>"
                             }
                         }
-                        html += "</ul>"
+                        if(count > 0){
+                            html = "<h3>Publications</h3>" + html
+                            html += "</ul>"
+                            html += "</div>"
+                        }
+                        
 
                         $("#pubs").append(html)
                     });
