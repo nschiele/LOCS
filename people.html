@@ -36,6 +36,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="people.js"></script>
 
     <script>
 
@@ -56,56 +57,114 @@
 
         return array;
         }
-        function addPerson(person){
+        function addPerson(person, where){
             html = ""
-            html += "<div class='col-xl-3 col-md-4 col-sm-6 mb-4'>"
-            html += '<div class="card border-0 shadow  h-100" onclick="location.href=\'person.html?id='+person.id+'\';" style="cursor:pointer;">'
-            html += '<img src="' + person.img+ '" class="card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
-            html += '<div class="card-body text-center">'
-            html += '<h5 class="card-title mb-0">'
-            if(person.hasOwnProperty("title")){
-                html += person.title + " "
-            }
-            html += person.firstname + " "
-            if(person.hasOwnProperty("tussenvoegsel")){
-                html += person.tussenvoegsel + " "
-            }
-            html += person.lastname
-            html += '</h5>'
-            html += '<div class="card-text text-black-50">' + person.position+ '</div>'
+            html += "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4'>"
+                html += '<div class="card border-0 shadow  h-100" style="height:100%">'
+                        // html += '<a style="display:inline-block;" href=\'person.html?id='+person.id+'\';">'    
+                        html += '<img id="pimg-'+person.id+'" src="' + person.img+ '" class="person-img card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
+                        // html += '</a>'
+                        html += '<div class="card-body text-center">'
+                            html += '<div class="row" onclick="location.href=\'person.html?id='+person.id+'\';" style="cursor: pointer;">'
+                                html += '<h5 class="card-title mb-0">'
+                                    html += formatName(person)
+                                html += '</h5>'
+                                    html += '<div class="card-text text-black-50">' + person.position+ '</div>'
+                            html += '</div>'
+                            html += '<div class="row justify-content-center" >'
+                                    var iconSize = 25
+                                    if(person.hasOwnProperty("gscholar")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://scholar.google.com/citations?user='+person.gscholar+'\';">'  
+                                            html += "<img class='social-icons' src='img/google.png' width='"+(iconSize-iconSize/10)+"' height='"+(iconSize-iconSize/10)+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("linkedin")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://www.linkedin.com/in/'+person.linkedin+'\';">'  
+                                            html += "<img class='social-icons' src='img/linkedin.png' width='"+iconSize+"' height='"+iconSize+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("orcid")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://orcid.org/'+person.orcid+'\';">'  
+                                            html += "<img class='social-icons orcid' src='img/orcid.png' width='"+iconSize+"' height='"+iconSize+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("github")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://github.com/'+person.github+'\';">'  
+                                            html += "<img class='social-icons' src='img/github.png' width='"+(iconSize-iconSize/20)+"' height='"+(iconSize-iconSize/20)+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    // html += '<div class="card-text text-black-50">' + person.position+ '</div>'
+                            html += '</div>'
+                        html += '</div>'
+                html += '</div>'
             html += '</div>'
-            html += '</div>'
-            html += '</div>'
-            $("#staff").append(html);
+            $(where).append(html);
         }
 
         var people = []
+        $(document).ready(function () {
+
+
         $.getJSON('data/people.json', function (data) {
             console.log(data)
             console.log("loaded json")
             console.log(people)
         })
         .done(function (data){
+            data = setIDs(data)
             people = data
             hierarchy = {0:[], 1:[], 2:[], 3:[], 4:[]}
+            past_hierarchy = {0:[], 1:[], 2:[], 3:[], 4:[]}
             for (var i in people) {
-                hierarchy[people[i].order].push(people[i])
-                console.log(hierarchy)
-                // console.log("hello")
-                // addPerson(people[i])
+                if(people[i].hasOwnProperty("former")){
+                    if(people[i].former){
+                        console.log("former staff found")
+                        past_hierarchy[people[i].order].push(people[i])
+                    } else {
+                        hierarchy[people[i].order].push(people[i])
+                    }
+                } else {
+                    hierarchy[people[i].order].push(people[i])
+                }
             }
             for (let i = 0; i < 5; i++) {
                 if(hierarchy.hasOwnProperty(i)){
                     // hierarchy[i] = shuffle(hierarchy[i])
                     for(var j in hierarchy[i]){
                         console.log(j)
-                        addPerson(hierarchy[i][j])
+                        hierarchy[i][j]["id"] = data.indexOf(hierarchy[i][j])
+                        addPerson(hierarchy[i][j], "#staff")
                     }
                 }
-            }   
+            }
+            for (let i = 0; i < 5; i++) {
+                if(past_hierarchy.hasOwnProperty(i)){
+                    // hierarchy[i] = shuffle(hierarchy[i])
+                    for(var j in past_hierarchy[i]){
+                        console.log(j)
+                        addPerson(past_hierarchy[i][j], "#past-staff")
+                    }
+                }
+            }  
         });
+    });
 
- 
+    $(document).on('click', '.person-img', function(data) { 
+        // alert(data); 
+        console.log(data.target.id.split("-")[1])
+        window.location.href = 'person.html?id='+data.target.id.split("-")[1]
+    });
+
+
+
     </script>
 
 </head>
@@ -119,7 +178,10 @@
         <!--Navigation bar-->
         <div id="nav-placeholder"></div>
         <script>
-            $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.html", function(){
+                $("#nav-people").addClass("active")
+                console.log("check")
+            });  
         </script>
         <!--end of Navigation bar-->
 
@@ -128,13 +190,29 @@
 
     <!-- Page Content -->
     <div class="container">
+
+        <!-- Page Heading -->
+        <h1 class="mt-4 mb-5">People
+            <small></small>
+        </h1>
+
+    </div>
+    <div class="container">
         <div class="row display-flex" id="staff">
 
 
         </div>
         <!-- /.row -->
+        <hr class="hr" />
+        <h2 class="text-muted">Former</h2>
+        <div class="row display-flex" id="past-staff">
+
+
+        </div>
 
     </div>
+
+
     <!-- /.container -->
 
 </body>

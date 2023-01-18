@@ -26,31 +26,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
-        $.getJSON('data/research.json', function (data) {
-            console.log(data)
-        })
-            .done(function (data) {
-                h = ""
-                for (var i in data) {
-                    h += '<div class="row">'
-                    h += '<div class="col-md-5">'
-                    h += '    <a href="#">'
-                    h += '    <img class="img-fluid rounded mb-3 mb-md-0" src="'+data[i].img+'" alt="">'
-                    h += '    </a>'
-                    h += '</div>'
-                    h += '<div class="col-md-7">'
-                    h += '    <h3>'+data[i].topic+'</h3>'
-                    for(j in data[i].description){
-                        h += '    <p>'
-                        h += data[i].description[j]
-                        h +=  '  </p>'
+        $(document).ready(function () {
+            $.getJSON('data/research.json', function (data) {
+                console.log(data)
+            })
+                .done(function (data) {
+                    h = ""
+                    for (var i in data) {
+                        h += '<div class="row">'
+                        h += '<div class="col-md-5">'
+                        h += '    <a href="#">'
+                        h += '    <img class="img-fluid rounded mb-3 mb-md-0" src="' + data[i].img + '" alt="">'
+                        h += '    </a>'
+                        h += '</div>'
+                        h += '<div class="col-md-7">'
+                        h += '    <h3>' + data[i].topic + '</h3>'
+                        for (j in data[i].description) {
+                            h += '    <p>'
+                            h += data[i].description[j]
+                            h += '  </p>'
+                        }
+                        h += '</div>'
+                        h += '</div>'
+                        h += '<hr>'
                     }
-                    h += '</div>'
-                    h += '</div>'
-                    h += '<hr>'
-                }
-                $("#research").append(h)
-            });
+                    $("#research").append(h)
+                });
+        });
     </script>
 
 
@@ -69,7 +71,10 @@
         <!--Navigation bar-->
         <div id="nav-placeholder"></div>
         <script>
-            $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.html", function () {
+                $("#nav-research").addClass("active")
+                console.log("check")
+            });  
         </script>
         <!--end of Navigation bar-->
 

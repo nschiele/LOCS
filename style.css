@@ -49,3 +49,16 @@
     display: flex;
     flex-direction: column;
   }
+
+  .person-img
+  {
+    cursor:pointer;
+  }
+
+  .social-icons {
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(180deg) brightness(95%) contrast(80%);
+   }
+
+   .social-icons.orcid {
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(50deg) brightness(100%) contrast(80%);
+   }

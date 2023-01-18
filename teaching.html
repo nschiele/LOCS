@@ -26,6 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
+        $(document).ready(function () {
         $.getJSON('research.json', function (data) {
             console.log(data)
         })
@@ -50,7 +51,7 @@
                     h += '<hr>'
                 }
                 $("#research").append(h)
-            });
+            });});
     </script>
 
 
@@ -69,7 +70,10 @@
         <!--Navigation bar-->
         <div id="nav-placeholder"></div>
         <script>
-            $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.html", function () {
+                $("#nav-teaching").addClass("active")
+                console.log("check")
+            });  
         </script>
         <!--end of Navigation bar-->
 
@@ -85,7 +89,7 @@
         </h1>
 
     </div>
-    <div class="container" id="research">
+    <div class="container" id="courses">
 
 
     </div>

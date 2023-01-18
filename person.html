@@ -37,6 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="cite.js"></script>
+    <script src="people.js"></script>
+
     <script>
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -70,14 +72,7 @@
             html += "<div class='col-md-8 col-sm-12'>"
             html += "<div class='row mt-2'>"
             html += '<h1 class="mb-2">'
-            if (person.hasOwnProperty("title")) {
-                html += person.title + " "
-            }
-            html += person.firstname + " "
-            if (person.hasOwnProperty("tussenvoegsel")) {
-                html += person.tussenvoegsel + " "
-            }
-            html += person.lastname
+            html += formatName(person)
             html += '</h1>'
             html += '<h3 class="mt-2">'
             html += person.position
@@ -109,6 +104,7 @@
             console.log(people)
         })
             .done(function (data) {
+                data = setIDs(data)
                 people = data
                 hierarchy = { 0: [], 1: [], 2: [], 3: [], 4: [] }
                 var person = {}
@@ -129,24 +125,30 @@
                         html = ""
                         count = 0
                         for (var i in data) {
-                            console.log(data[i].author, person.lastname)
-                            if (data[i].author.toLowerCase().includes(person.lastname.toLowerCase())){
-                                if(count == 0){
-                                    html += "<div class='pl-2'>"
-                                    html += "<ul>"
-                                } 
-                                count += 1
-                                html += "<li>"
-                                html += cite(data[i])
-                                html += "</li>"
+                            // console.log(data[i])
+                            for (j in data[i]["author-codes"]) {
+                                // console.log(data[i]["author-codes"][j])
+                                if (data[i]["author-codes"][j] == person.init) {
+
+
+
+                                    if (count == 0) {
+                                        html += "<div class='pl-2'>"
+                                        html += "<ul>"
+                                    }
+                                    count += 1
+                                    html += "<li>"
+                                    html += cite(data[i])
+                                    html += "</li>"
+                                }
                             }
                         }
-                        if(count > 0){
+                        if (count > 0) {
                             html = "<h3>Publications</h3>" + html
                             html += "</ul>"
                             html += "</div>"
                         }
-                        
+
 
                         $("#pubs").append(html)
                     });

@@ -1,62 +1,174 @@
 [
     {
-        "id":0,
+        "init":"og",
         "title":"Dr.",
         "firstname":"Olga",
         "lastname":"Gadyatskaya",
         "position":"Assistant Professor",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/portraits/science/g/olga-gadyatskaya.jpg/olga-gadyatskaya.jpg/d200x250",
+        "gscholar":"QD3DU0wAAAAJ",
+        "linkedin":"olgagadyatskaya",
+        "orcid": "0000-0002-3760-9165",
+        "~github":"vilena",
+        "email":"o.gadyatskaya@liacs.leidenuniv.nl",
         "order":0
     },
     {
-        "id":1,
+        "init":"nds",
         "firstname":"Nathan Daniel",
         "lastname":"Schiele",
         "position":"PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/nathanschiele.png/nathanschiele.png/d200x250",
+        "gscholar":"vSrAKUUAAAAJ",
+        "orcid": "0000-0003-1186-1503",
+        "linkedin":"schielenathan",
+        "github":"nschiele",
+        "email":"n.d.schiele@liacs.leidenuniv.nl",
         "order":2,
         "description":["Nathan is a Teaching PhD Candidate from the United States. He completed his bachelors in applied mathematics at the University of Washington in Seattle, and his masters in information technology at Stuttgart Universität.", "His research focuses on examining the gap between industry and academia as it pertains to graphical threat models, specifically focusing on Attack-Defense Trees.", "In his free time, he enjoys traveling, boxing and riding his motorcycle."]
 
     },
     {
-        "id":2,
+        "init":"sey",
         "firstname":"Soufian",
         "tussenvoegsel":"El",
         "lastname":"Yadmani",
         "position":"PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/soufian-el-yadmani.jpg/soufian-el-yadmani.jpg/d200x250",
+        "gscholar":"rvMusksAAAAJ",
+        "linkedin":"soufianelyadmani",
         "order":2
     },
     {
-        "id":3,
+        "init":"rl",
         "firstname":"Rui",
         "lastname":"Li",
         "position":"PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/rui-li.jpeg/rui-li.jpeg/d200x250",
+        "linkedin":"rui-li-3625b4231",
         "order":2
     },
     {
-        "id":4,
+        "init":"ak",
         "firstname":"Arina",
         "lastname":"Kudriavtseva",
         "position":"PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/arina-kudriavtseva.jpg/arina-kudriavtseva.jpg/d200x250",
+        "gscholar":"MUZ3Qq0AAAAJ",
+        "linkedin":"arina-kudriavtseva-7aaa37217",
         "order":2
     },
     {
-        "id":5,
+        "init":"gb",
         "firstname":"Giorgos",
         "lastname":"Bampilis",
         "position":"PhD Candidate",
-        "img": "https://styles.redditmedia.com/t5_2r5i1/styles/communityIcon_x4lqmqzu1hi81.jpg",
+        "img": "img/blank.png",
+        "linkedin":"giorgos-bampilis",
         "order":2
     },
     {
-        "id":6,
+        "init":"xj",
         "firstname":"Xinyuan",
         "lastname":"Ji",
         "position":"PhD Candidate",
+        "former":false,
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/xinyuan-ji.jpg/xinyuan-ji.jpg/d200x250",
+        "linkedin":"新媛-吉-508444199",
         "order":2
+    },
+    {
+        "init":"ms-ms",
+        "firstname":"Max",
+        "lastname":"Staallekker",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "order":3
+    },
+    {
+        "init":"ms-sg",
+        "firstname":"Stuart",
+        "lastname":"Gunput",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former":false,
+        "order":3
+    },
+    {
+        "init":"ms-yw",
+        "firstname":"Yun",
+        "lastname":"Wan",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "order":3
+    },
+    {
+        "init":"ms-ya",
+        "firstname":"Yu Ang",
+        "lastname":"Yuan",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "order":3
+    },
+    {
+        "init":"ms-fs",
+        "firstname":"Feiyang",
+        "lastname":"Sun",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "order":3
+    },
+    {
+        "init":"bs-dk",
+        "firstname":"Daniel",
+        "lastname":"Kuiper",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "order":4
+    },
+    {
+        "init":"bs-jo",
+        "firstname":"Jimmy",
+        "lastname":"Oei",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "order":4
+    },
+    {
+        "init":"bs-svp",
+        "firstname":"Steven",
+        "tussenvoegsel":"van",
+        "lastname":"Popele",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "linkedin":"steven-van-popele-a77648253",
+        "order":4
+    },
+    {
+        "init":"bs-sm",
+        "firstname":"Stephan",
+        "lastname":"Meza",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "order":4
+    },
+    {
+        "init":"bs-mm",
+        "firstname":"Marwa",
+        "lastname":"Mohalaia",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "order":4
+    },
+    {
+        "init":"bs-rt",
+        "firstname":"Robin",
+        "lastname":"The",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "linkedin":"robin-the",
+        "former": true,
+        "order":4
     }
+
 ]

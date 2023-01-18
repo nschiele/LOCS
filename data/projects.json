@@ -1,0 +1,66 @@
+[
+    {
+        "title":"ADT Kill Chain Mapping",
+        "Supervisor":["nds"],
+        "Description":"Create a parameter that can map an ADT node to a kill chain step. Provide examples of this mapping in action. Discuss utility of such a mapping",
+        "Deliverable":"ADT parameter mapping. ADT examples of this. Analysis.",
+        "level":"b"
+    },
+    {
+        "title":"ADT Online Survey",
+        "Supervisor":["nds"],
+        "Description":"Create a survey to be given either in-person or via crowdsourcing that seeks to understand the comprehensibility of attack trees to laypeople.",
+        "Deliverable":"A survey, the data from that survey, analysis of data",
+        "level":"m"
+    },
+    {
+        "title":"General Threat Communication Survey",
+        "Supervisor":["nds"],
+        "Description":"Create a survey to be given either in-person or via crowdsourcing to establish what information is received when threats are communicated. How does this information change based on how the threat is communicated?",
+        "Deliverable":"ADT parameter mapping. ADT examples of this. Analysis.",
+        "level":"m"
+    },
+    {
+        "title":"ADT Industry Survey",
+        "Supervisor":["nds"],
+        "Description":"Interview a series of people in industry who work with ADTs to find how they use them, why they use them, how they are perceived (what do they find useful), etc.",
+        "Deliverable":"Interview transcripts/recordings, analysis of interviews (coding)",
+        "level":"m"
+    },
+    {
+        "title":"Automated ADT Generation",
+        "Supervisor":["nds"],
+        "Description":"Write code that can take ADT input in some format: plaintext description, paragraph, structure sentences (BSc), etc, and produce an ADT directly usable format (xml/json)",
+        "Deliverable":"Program/algorithm capable of generated ADT format (xml/json representation) from textual input",
+        "level":"b"
+    },
+    {
+        "title":"Automated ADT Format from Image",
+        "Supervisor":["nds"],
+        "Description":"Write code that can take ADT image and generate a standardized ADT format from it",
+        "Deliverable":"Program/algorithm capable of generated ADT format (xml/json representation) from image input",
+        "level":"b",
+        "past":false
+    },
+    {
+        "title":"ADT Dataset Creation",
+        "Supervisor":["nds"],
+        "Description":"Write code that creates a LOT of ADTs in standardized format (xml/json) from some kind of dataset (example: MITRE). This could be used for general analysis or as training data for some kind of ML project.",
+        "Deliverable":"Dataset of ADTs, analysis of dataset",
+        "level":"b"
+    },
+    {
+        "title":"ADT Javascript Visualization ",
+        "Supervisor":["nds"],
+        "Description":"Write code that can take an ADT data format (xml/json) and generate ADT images from it. ADT visualization should make maximum use of available field, and be able to adjust node placement, node text size. There should be no overlapping elements in the visual field.",
+        "Deliverable":"The code that can generate ADT images from specific data format.",
+        "level":"b"
+    },
+    {
+        "title":"ADT Python Library",
+        "Supervisor":["nds"],
+        "Description":"Create a library that allows for the creation of ADTs in Python. This should include some kind of visualization, the ability to enter whole trees in standard format, and the ability to access/adjust/add onto nodes already within the ADT (needs to ability to traverse and access nodes in the Tree) ",
+        "Deliverable":"Python library that can generate ADTs",
+        "level":"b"
+    }
+]

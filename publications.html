@@ -37,6 +37,7 @@
         console.log(getParameterByName('sort'))
 
         var publist = []
+        $(document).ready(function () {
         $.getJSON('data/pubs.json', function (data) {
             publist = data
             console.log(data)
@@ -55,7 +56,7 @@
             }
             $("#pubs").append(h)
         });
-
+    });
 
     </script>
 
@@ -70,7 +71,10 @@
         <!--Navigation bar-->
         <div id="nav-placeholder"></div>
         <script>
-            $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.html", function(){
+                $("#nav-publications").addClass("active")
+                console.log("check")
+            });  
         </script>
         <!--end of Navigation bar-->
     </div>
