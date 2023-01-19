@@ -65,7 +65,7 @@
                         html += '<img id="pimg-'+person.init+'" src="' + person.img+ '" class="person-img card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
                         // html += '</a>'
                         html += '<div class="card-body text-center">'
-                            html += '<div class="row" onclick="location.href=\'person.html?id='+person.id+'\';" style="cursor: pointer;">'
+                            html += '<div class="row" onclick="location.href=\'person.html?id='+person.init+'\';" style="cursor: pointer;">'
                                 html += '<h5 class="card-title mb-0">'
                                     html += formatName(person)
                                 html += '</h5>'
@@ -119,14 +119,14 @@
             console.log(people)
         })
         .done(function (data){
-            data = setIDs(data)
+            // data = setIDs(data)
             people = data
             hierarchy = {0:[], 1:[], 2:[], 3:[], 4:[]}
             past_hierarchy = {0:[], 1:[], 2:[], 3:[], 4:[]}
             for (var i in people) {
                 if(people[i].hasOwnProperty("former")){
                     if(people[i].former){
-                        console.log("former staff found")
+                        // console.log("former staff found")
                         past_hierarchy[people[i].order].push(people[i])
                     } else {
                         hierarchy[people[i].order].push(people[i])
@@ -140,7 +140,7 @@
                     // hierarchy[i] = shuffle(hierarchy[i])
                     for(var j in hierarchy[i]){
                         console.log(j)
-                        hierarchy[i][j]["id"] = data.indexOf(hierarchy[i][j])
+                        // hierarchy[i][j]["id"] = data.indexOf(hierarchy[i][j])
                         addPerson(hierarchy[i][j], "#staff")
                     }
                 }
