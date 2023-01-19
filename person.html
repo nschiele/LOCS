@@ -87,6 +87,8 @@
             html += '</div>'
             html += "<div class='row mt-2' id='pubs'>"
             html += '</div>'
+            html += "<div class='row mt-2' id='proj'>"
+            html += '</div>'
             html += '</div>'
             html += "<div class='col-md-4 d-none d-sm-none d-lg-block'>"
             html += '<img src="' + person.img + '" style="object-fit: cover;    overflow: hidden; width: 100%">'
@@ -116,6 +118,7 @@
                 }
                 addPerson(person)
 
+                // Loads the publications related to the person    
                 $.getJSON('data/pubs.json', function (data) {
                     publist = data
                     console.log(data)
@@ -148,6 +151,42 @@
                             html += "</div>"
                         }
 
+
+                        $("#pubs").append(html)
+                    });
+
+                // Loads the projects related to the person
+                $.getJSON('data/projects.json', function (data) {
+                publist = data
+                console.log(data)
+                })
+                    .done(function (data) {
+                        html = ""
+                        count = 0
+                        for (var i in data) {
+                            // console.log(data[i])
+                            for (j in data[i]["author-codes"]) {
+                                // console.log(data[i]["author-codes"][j])
+                                if (data[i]["author-codes"][j] == person.init) {
+
+
+
+                                    if (count == 0) {
+                                        html += "<div class='pl-2'>"
+                                        html += "<ul>"
+                                    }
+                                    count += 1
+                                    html += "<li>"
+                                    html += cite(data[i])
+                                    html += "</li>"
+                                }
+                            }
+                        }
+                        if (count > 0) {
+                            html = "<h3>Projects</h3>" + html
+                            html += "</ul>"
+                            html += "</div>"
+                        }
 
                         $("#pubs").append(html)
                     });
