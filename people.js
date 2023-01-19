@@ -11,19 +11,29 @@ function formatName(person, title=true){
     return toReturn
 }
 
-function setIDs(data){
-    for(i in data){
-        data[i].id = i
-    }
-    return data
-}
+// function setIDs(data){
+//     for(i in data){
+//         data[i].id = i
+//     }
+//     return data
+// }
 
 //Takes dataset of people and the code, and returns the person with that code
-function findPeople(data, code){
+// function findPeople(data, code){
+//     for(i in data){
+//         if(data[i].init == code){
+//             return i
+//         }
+//     }
+//     return -1
+// }
+
+
+function codeToPerson(data, code){
     for(i in data){
-        if(data.init == code){
-            return i
+        // console.log("person: ", data[i])
+        if(data[i].init == code){
+            return data[i]
         }
     }
-    return -1
 }

@@ -27,13 +27,41 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="people.js"></script>
     <script>
-        function displayProject(project) {
-            html = ""
-            html += "<tr>"
-                        html += " <th scope='row'>"+project.title+"</th>"
-                        html += "<td>Mark</td>"
-                    html += "</tr>"
-                    return html
+        function displayProject(project, sup, student) {
+            var html = ""
+            html += "<tr class='main main_" + project.code + "'>"
+            html += " <th scope='row'>" + project.title + "</th>"
+            if (project.status == "i" || project.status == "p") {
+                html += "<td>"
+                html += "<a href='person.html?id=" + student.init + "'>" + formatName(student) + "</a>"
+                html += "</td>"
+            }
+            html += "<td>"
+            html += "<a href='person.html?id=" + sup.init + "'>" + formatName(sup) + "</a>"
+            html += "</td>"
+            html += "</tr>"
+            html += "<tr class='rev rev_" + project.code + " no-hover' style='display:none;'>"
+            if (project.status == "a") {
+                html += "<td colspan='2'>"
+            } else {
+                html += "<td colspan='3'>"
+            }
+            html += "<div class='pl-5' style='margin-left:10px'>"
+            if (project.status != "p" || !project.hasOwnProperty("abstract")) {
+                html += "<p> <b>Description:  </b>" + project.description + "</p>"
+                if (project.hasOwnProperty("deliverable") && project.status == "a") {
+                    html += "<p> <b>Deliverable:  </b>" + project.deliverable + "</p>"
+                }
+            } else {
+                html += "<p> <b>Abstract: </b></p>"
+                for(i in project.abstract){
+                    html += "<p>" + project.abstract[i] + "</p>"
+                }
+            }
+            html += "</div>"
+            html += "</td>"
+            html += "</tr>"
+            return html
         }
 
         $(document).ready(function () {
@@ -42,42 +70,146 @@
                 people = data
             })
             $.getJSON('data/projects.json', function (projects) {
-                console.log(projects)
+                // console.log(projects)
             }).done(function (projects) {
                 html = ""
-                var dict = { "ms-curr": [], "bs-curr": [], "ms-past": [], "bs-past": [] }
+                // Dictionary sorts projects into available, in progress and previous
+                var dict = { "ms-av": [], "bs-av": [], "ms-ip": [], "bs-ip": [], "ms-past": [], "bs-past": [] }
                 for (var i in projects) {
-                    console.log(projects[i].level)
+                    // console.log(projects[i].level)
                     if (projects[i].level == "m") {
-                        if (projects[i].hasOwnProperty("past")) {
-                            if (projects[i].past) {
-                                dict["ms-past"].push(projects[i])
-                            } else {
-                                dict["ms-curr"].push(projects[i])
-                            }
-                        } else {
-                            dict["ms-curr"].push(projects[i])
+                        if (projects[i].status == "a") {
+                            dict["ms-av"].push(projects[i])
+                        } else if (projects[i].status == "i") {
+                            dict["ms-ip"].push(projects[i])
+                        } else if (projects[i].status == "p") {
+                            dict["ms-past"].push(projects[i])
                         }
                     } else if (projects[i].level == "b") {
-                        if (projects[i].hasOwnProperty("past")) {
-                            if (projects[i].past) {
-                                dict["bs-past"].push(projects[i])
-                            } else {
-                                dict["bs-curr"].push(projects[i])
-                            }
-                        } else {
-                            dict["bs-curr"].push(projects[i])
+                        if (projects[i].status == "a") {
+                            dict["bs-av"].push(projects[i])
+                        } else if (projects[i].status == "i") {
+                            dict["bs-ip"].push(projects[i])
+                        } else if (projects[i].status == "p") {
+                            dict["bs-past"].push(projects[i])
                         }
                     }
                 }
-                console.log(dict)
-                for (i in dict["ms-curr"]) {
-                    html += displayProject(dict["ms-curr"][i])
+                // console.log(dict)
+                html = ""
+                for (i in dict["ms-av"]) {
+                    var sup = codeToPerson(people, dict["ms-av"][i].supervisor[0])
+                    html += displayProject(dict["ms-av"][i], sup)
                 }
-                html += '<hr>'
-                $("#active-theses-ms").append(html)
+                if (html.length > 0) {
+                    html = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
+                    html = '<h4 class="my-3">Masters</h4>' + html
+                    html = '<h3 class="my-4">Available Theses</h3>' + html
+                    html += '</tbody></table>'
+                    html += '<hr>'
+                }
+                bhtml = ""
+                for (i in dict["bs-av"]) {
+                    var sup = codeToPerson(people, dict["bs-av"][i].supervisor[0])
+                    bhtml += displayProject(dict["bs-av"][i], sup)
+                }
+                if (bhtml.length > 0) {
+                    bhtml = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
+                    bhtml = '<h4 class="my-3">Bachelors</h4>' + bhtml
+                    if ((html.length == 0)) {
+                        bhtml = '<h3 class="my-4">Available Theses</h3>' + bhtml
+                    }
+                    bhtml += '</tbody></table>'
+                }
+                html += bhtml
+
+                $("#available-theses").append(html)
+
+
+
+                //This part does the theses in progress
+                html = ""
+                for (i in dict["ms-ip"]) {
+                    var sup = codeToPerson(people, dict["ms-ip"][i].supervisor[0])
+                    var student = codeToPerson(people, dict["ms-ip"][i].student)
+                    console.log(student)
+                    html += displayProject(dict["ms-ip"][i], sup, student)
+                }
+                if (html.length > 0) {
+                    html = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
+                    html = '<h4 class="my-3">Masters</h4>' + html
+                    html = '<h3 class="my-4">Theses In Progress</h3>' + html
+                    html += '</tbody></table>'
+                    html += '<hr>'
+                }
+                bhtml = ""
+                for (i in dict["bs-ip"]) {
+                    var sup = codeToPerson(people, dict["bs-ip"][i].supervisor[0])
+                    var student = codeToPerson(people, dict["bs-ip"][i].student)
+                    console.log(student)
+                    bhtml += displayProject(dict["bs-ip"][i], sup, student)
+                }
+                if (bhtml.length > 0) {
+                    bhtml = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
+                    bhtml = '<h4 class="my-3">Bachelors</h4>' + bhtml
+                    if ((html.length == 0)) {
+                        bhtml = '<h3 class="my-4">Theses In Progress</h3>' + bhtml
+                    }
+                    bhtml += '</tbody></table>'
+                }
+                html += bhtml
+
+                $("#in-progress-theses").append(html)
+
+
+
+                //This part does the past theses
+                html = ""
+                for (i in dict["ms-ip"]) {
+                    var sup = codeToPerson(people, dict["ms-ip"][i].supervisor[0])
+                    var student = codeToPerson(people, dict["ms-ip"][i].student)
+                    console.log(student)
+                    html += displayProject(dict["ms-ip"][i], sup, student)
+                }
+                if (html.length > 0) {
+                    html = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
+                    html = '<h4 class="my-3">Masters</h4>' + html
+                    html = '<h3 class="my-4">Past Theses</h3>' + html
+                    html += '</tbody></table>'
+                    html += '<hr>'
+                }
+                bhtml = ""
+                for (i in dict["bs-past"]) {
+                    var sup = codeToPerson(people, dict["bs-past"][i].supervisor[0])
+                    var student = codeToPerson(people, dict["bs-past"][i].student)
+                    console.log(student)
+                    bhtml += displayProject(dict["bs-past"][i], sup, student)
+                }
+                if (bhtml.length > 0) {
+                    bhtml = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
+                    bhtml = '<h4 class="my-3">Bachelors</h4>' + bhtml
+                    if ((html.length == 0)) {
+                        bhtml = '<h3 class="my-4">Past Theses</h3>' + bhtml
+                    }
+                    bhtml += '</tbody></table>'
+                }
+                html += bhtml
+
+                $("#in-progress-theses").append(html)
             });
         });
+
+
+
+
+        $(document).on('click', '.main', function (data) {
+            $(".main").removeClass("stay")
+            $("."+data.currentTarget.classList[1]).addClass("stay")
+            $(".rev").css("display", "none")
+            console.log("rev_" + data.currentTarget.classList[1].split("_")[1])
+            $(".rev.rev_" + data.currentTarget.classList[1].split("_")[1]).css("display", "table-row")
+        });
+
     </script>
 
 
@@ -98,7 +230,7 @@
         <script>
             $("#nav-placeholder").load("nav.html", function () {
                 $("#nav-students").addClass("active")
-                console.log("check")
+                // console.log("check")
             });  
         </script>
         <!--end of Navigation bar-->
@@ -122,33 +254,21 @@
             </p>
         </div>
         <div class="row">
-            <h3 class="my-4">Available Theses</h3>
-            <h4 class="my-3">Masters</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Person</th>
-                    </tr>
-                </thead>
-                <tbody id="active-theses-ms">
-                    <!-- <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                    </tr> -->
-                </tbody>
-            </table>
-            <h4 class="my-3">Bachelors</h4>
-            <div id="active-theses-ms">
+            <div id="available-theses">
             </div>
         </div>
 
         <div class="row">
-            <h3 class="my-4">Past Theses
-            </h3>
+            <div id="in-progress-theses">
+            </div>
+        </div>
+
+        <div class="row">
             <div id="past-theses">
             </div>
         </div>
+
+
 
     </div>
     <!-- /.container -->

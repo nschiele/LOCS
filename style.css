@@ -36,6 +36,15 @@
     text-decoration: none;
 } */
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th, .stay {
+    background-color: rgb(227, 230, 241);
+  }
+
+.table-hover > tbody > tr.no-hover:hover > td,
+.table-hover > tbody > tr.no-hover:hover > th {
+    background-color: #ffffffff;
+    box-shadow: none;
+}
 
 
 

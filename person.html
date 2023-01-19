@@ -104,13 +104,12 @@
             console.log(people)
         })
             .done(function (data) {
-                data = setIDs(data)
                 people = data
                 hierarchy = { 0: [], 1: [], 2: [], 3: [], 4: [] }
                 var person = {}
                 var pageID = getParameterByName('id')
                 for (var i in people) {
-                    if (people[i].id == pageID) {
+                    if (people[i].init == pageID) {
                         person = people[i]
                         console.log(person)
                     }
