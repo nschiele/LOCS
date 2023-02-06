@@ -102,7 +102,7 @@
                     html += displayProject(dict["ms-av"][i], sup)
                 }
                 if (html.length > 0) {
-                    html = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
+                    html = '<table class="table table-hover"> <thead> <tr> <th class="w-75" scope="col">Title</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
                     html = '<h4 class="my-3">Masters</h4>' + html
                     html = '<h3 class="my-4">Available Theses</h3>' + html
                     html += '</tbody></table>'
@@ -114,7 +114,7 @@
                     bhtml += displayProject(dict["bs-av"][i], sup)
                 }
                 if (bhtml.length > 0) {
-                    bhtml = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
+                    bhtml = '<table class="table table-hover"> <thead> <tr> <th class="w-75" scope="col">Title</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
                     bhtml = '<h4 class="my-3">Bachelors</h4>' + bhtml
                     if ((html.length == 0)) {
                         bhtml = '<h3 class="my-4">Available Theses</h3>' + bhtml
@@ -136,7 +136,7 @@
                     html += displayProject(dict["ms-ip"][i], sup, student)
                 }
                 if (html.length > 0) {
-                    html = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
+                    html = '<table class="table table-hover"> <thead> <tr> <th class="w-50" scope="col">Title</th><th class="w-25" scope="col">Student</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
                     html = '<h4 class="my-3">Masters</h4>' + html
                     html = '<h3 class="my-4">Theses In Progress</h3>' + html
                     html += '</tbody></table>'
@@ -150,7 +150,7 @@
                     bhtml += displayProject(dict["bs-ip"][i], sup, student)
                 }
                 if (bhtml.length > 0) {
-                    bhtml = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
+                    bhtml = '<table class="table table-hover"> <thead> <tr> <th class="w-50" scope="col">Title</th><th class="w-25" scope="col">Student</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
                     bhtml = '<h4 class="my-3">Bachelors</h4>' + bhtml
                     if ((html.length == 0)) {
                         bhtml = '<h3 class="my-4">Theses In Progress</h3>' + bhtml
@@ -165,14 +165,14 @@
 
                 //This part does the past theses
                 html = ""
-                for (i in dict["ms-ip"]) {
-                    var sup = codeToPerson(people, dict["ms-ip"][i].supervisor[0])
-                    var student = codeToPerson(people, dict["ms-ip"][i].student)
+                for (i in dict["ms-past"]) {
+                    var sup = codeToPerson(people, dict["ms-past"][i].supervisor[0])
+                    var student = codeToPerson(people, dict["ms-past"][i].student)
                     console.log(student)
-                    html += displayProject(dict["ms-ip"][i], sup, student)
+                    html += displayProject(dict["ms-past"][i], sup, student)
                 }
                 if (html.length > 0) {
-                    html = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
+                    html = '<table class="table table-hover"> <thead> <tr> <th class="w-55" scope="col">Title</th><th class="w-25" scope="col">Student</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
                     html = '<h4 class="my-3">Masters</h4>' + html
                     html = '<h3 class="my-4">Past Theses</h3>' + html
                     html += '</tbody></table>'
@@ -186,7 +186,7 @@
                     bhtml += displayProject(dict["bs-past"][i], sup, student)
                 }
                 if (bhtml.length > 0) {
-                    bhtml = '<table class="table table-hover"> <thead> <tr> <th scope="col">Title</th><th scope="col">Student</th><th scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
+                    bhtml = '<table class="table table-hover"> <thead> <tr> <th class="w-50" scope="col">Title</th><th class="w-25" scope="col">Student</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
                     bhtml = '<h4 class="my-3">Bachelors</h4>' + bhtml
                     if ((html.length == 0)) {
                         bhtml = '<h3 class="my-4">Past Theses</h3>' + bhtml

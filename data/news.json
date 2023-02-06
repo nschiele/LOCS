@@ -1,0 +1,20 @@
+[
+    {
+        "title":"Paper Presentation",
+        "year":2022,
+        "month":10,
+        "day":19,
+        "subtitle":"Soufian El Yadmani presents at ONE Conference",
+        "description":["Soufian El Yadmani presented his paper, <i>How security professionals are being attacked: A study of malicious CVE proof of concept exploits in GitHub</i>, at ONE conference in The Hague."]
+    },
+    {
+        "title":"Talk",
+        "year":2023,
+        "month":1,
+        "day":20,
+        "time":"10:30",
+        "location":"Snellius room 403",
+        "subtitle":"Talk from Rob van der Meer",
+        "description":["Talk from Rob van der Veert of the Software Improvement Group"]
+    }
+]
