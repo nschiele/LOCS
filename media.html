@@ -36,7 +36,36 @@
         }
         console.log(getParameterByName('sort'))
 
+        $(document).ready(function () {
+            $.getJSON('data/media.json', function (data) {
+                medlist = data
+                console.log(data)
+            })
+                .done(function (data) {
+                    var h = ""
+                    for (var i in medlist) {
+                        console.log(medlist[i])
+                        h += '<div class="col-sm-4">'
+                        h += '<div class="card text-center">'
+                        // h += '<div class="card-header">'
+                        // h += '    Featured'
+                        // h += '</div>'
+                        h += '<div class="card-body">'
+                        h += '    <h5 class="card-title">Special title treatment</h5>'
+                        h += '   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>'
+                        h += '   <a href="#" class="btn btn-primary">Go somewhere</a>'
+                        h += '</div>'
+                        h += '<div class="card-footer text-muted">'
+                        h += '    2 days ago'
+                        h += '</div>'
+                        h += '</div>'
+                        h += '</div>'
+                        h += '</div>'
 
+                    }
+                    $("#media").append(h)
+                });
+        });
 
     </script>
 
@@ -51,7 +80,7 @@
         <!--Navigation bar-->
         <div id="nav-placeholder"></div>
         <script>
-            $("#nav-placeholder").load("nav.html", function(){
+            $("#nav-placeholder").load("nav.html", function () {
                 $("#nav-media").addClass("active")
                 console.log("check")
             });  
@@ -69,8 +98,26 @@
 
     </div>
 
-    <div class="container" id="pubs">
+    <div class="container">
+        <div class="row" id="media">
+            <!-- <div class="col-sm-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+            </div> -->
 
+
+        </div>
     </div>
     ]
     <!-- <table class="table">
