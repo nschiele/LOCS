@@ -108,5 +108,13 @@
         "abstract":["GitHub is one of the most well-known and used platforms for software development and code sharing that, among other purposes, is being used by security experts to share proof-of-concept exploit code. These exploits are useful for pentesters to identify if a system they evaluate is vulnerable and contains known vulnerabilities (CVEs). However, recently it has been reported that some of these exploits are being weaponized, i.e., they attack the system on which the pentest is conducted.", "In this work we analyze the exploit landscape on GitHub over the last 5 years. We have proposed several heuristics to identify weaponized (malicious) exploits. Although we cannot detect all malicious exploits with these heuristics, our evaluation shows that weaponized exploits are widely distributed, and that the security community must be extra careful when reusing the proof-of-concept code from unknown sources."],
         "level":"b",
         "status":"p"
+    },
+    {
+        "title":"Measuring non-technical practices during the software development process",
+        "code":"measure-non-technical-practices",
+        "supervisor":["ak"],
+        "description":"In spite of all efforts to improve software security, vulnerabilities are still distributed in software. While producing secure software, there are problems with not only purely technical practices but also non-technical practices, such as organizational, behavioral, and governance aspects. People, who make decisions have less understanding of non-technical practices. In this project, you will explore which non-technical practices are involved in the secure software methodologies and the methods used to provide evidence of the effectiveness of these practices.",
+        "level":"b",
+        "status":"a"
     }
 ]
