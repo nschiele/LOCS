@@ -36,34 +36,55 @@
         }
         console.log(getParameterByName('sort'))
 
+        function addMedia(item){
+            var h = ""
+            h += '<div class="col-sm-4">'
+                        h += '<div class="card text-center">'
+                        // h += '<div class="card-header">'
+                        // h += '    Featured'
+                        // h += '</div>'
+                        h += '<div class="card-body">'
+                        h += '    <h5 class="card-title">' + item.title + '</h5>'
+                        if (item.hasOwnProperty("description")) {
+                            h += '   <p class="card-text">'
+                            h += item.description
+                            h += '</p>'
+                        }
+                        h += '   <a href="'
+                        h += item.link
+                        h += '" class="btn btn-primary">'
+                        if (item.hasOwnProperty("link_title")) {
+                            h += item.link_title
+                        } else {
+                            h += 'Click here'
+                        }
+                        h += '   </a>'
+                        h += '</div>'
+                        h += '  <div class="card-footer text-muted">' + item.year + '-' + item.month + '-' + item.day + '</div>'
+                        h += '</div>'
+                        h += '</div>'
+                        h += '</div>'
+                        h += '</div>'
+
+                    $("#media").append(h)
+        }
+
         $(document).ready(function () {
             $.getJSON('data/media.json', function (data) {
                 medlist = data
                 console.log(data)
             })
                 .done(function (data) {
-                    var h = ""
-                    for (var i in medlist) {
-                        console.log(medlist[i])
-                        h += '<div class="col-sm-4">'
-                        h += '<div class="card text-center">'
-                        // h += '<div class="card-header">'
-                        // h += '    Featured'
-                        // h += '</div>'
-                        h += '<div class="card-body">'
-                        h += '    <h5 class="card-title">Special title treatment</h5>'
-                        h += '   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>'
-                        h += '   <a href="#" class="btn btn-primary">Go somewhere</a>'
-                        h += '</div>'
-                        h += '<div class="card-footer text-muted">'
-                        h += '    2 days ago'
-                        h += '</div>'
-                        h += '</div>'
-                        h += '</div>'
-                        h += '</div>'
-
+                    var order = [];
+                    for (i in data) {
+                        order.push(data[i])
                     }
-                    $("#media").append(h)
+                    console.log(order)
+                    order.sort((a, b) => (b.year - a.year) * 100 + (b.month - a.month) * 10 + (b.day - a.day))
+                    console.log(order)
+                    for (i in order) {
+                        addMedia(order[i]);
+                    }
                 });
         });
 

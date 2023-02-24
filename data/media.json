@@ -1,10 +1,22 @@
 [
-    {"usr":["og"],
-     "title": "test1"},
+    {"title": "Girls can be hackers too",
+     "link":"https://www.universiteitleiden.nl/en/news/2023/02/mijn-jop-is-top-olga-gadyatskaya",
+     "year":2023,
+     "month":2,
+     "day":9},
 
-     {"usr":["og"],
-     "title": "test2"},
+     {"title": "Thousands of GitHub repositories deliver fake PoC exploits with malware",
+     "description":"Our recent technical report paper on malicious exploits in GitHub repositories has attracted attention of numerous cyber security media outlets, including BleepingComputer",
+     "link":"https://www.bleepingcomputer.com/news/security/thousands-of-github-repositories-deliver-fake-poc-exploits-with-malware/",
+     "year":2022,
+     "month":10,
+     "day":23},
 
-     {"usr":["og"],
-     "title": "test3"}
+     {"title": "GROUP PASSPORT",
+     "description":"System and Security group was featured in I/O Magazine",
+     "link_title":"Read more",
+     "link":"https://ict-research.nl/wordpress/wp-content/uploads/2017/11/IO-magazine-NR3-2021_web.pdf",
+     "year":2021,
+     "month":10,
+     "day":18}
 ]
