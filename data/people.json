@@ -23,6 +23,7 @@
         "orcid": "0000-0003-1186-1503",
         "linkedin":"schielenathan",
         "github":"nschiele",
+        "lu_email":"n.d.schiele",
         "email":"n.d.schiele@liacs.leidenuniv.nl",
         "order":2,
         "description":["Nathan is a Teaching PhD Candidate from the United States. He completed his bachelors in applied mathematics at the University of Washington in Seattle, and his masters in information technology at Stuttgart Universität.", "His research focuses on examining the gap between industry and academia as it pertains to graphical threat models, specifically focusing on Attack-Defense Trees.", "In his free time, he enjoys traveling, boxing and riding his motorcycle."]
@@ -111,6 +112,22 @@
         "order":3
     },
     {
+        "init":"ms-sa",
+        "firstname":"Shamir",
+        "lastname":"Abdul",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "order":3
+    },
+    {
+        "init":"ms-ca",
+        "firstname":"Cem",
+        "lastname":"Ayerdem",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "order":4
+    },
+    {
         "init":"ms-fs",
         "firstname":"Feiyang",
         "lastname":"Sun",
@@ -169,6 +186,156 @@
         "linkedin":"robin-the",
         "former": true,
         "order":4
+    },
+    {
+        "init":"bs-os",
+        "firstname":"Oussama",
+        "lastname":"Soulimani",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"bs-db",
+        "firstname":"Dennis",
+        "lastname":"Buurman",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"bs-kh",
+        "firstname":"Kevin",
+        "lastname":"Hulsker",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"bs-cs",
+        "firstname":"Corne",
+        "lastname":"Spek",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"bs-ad",
+        "firstname":"Arian",
+        "lastname":"Doek",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"bs-avds",
+        "firstname":"Arthur",
+        "tussenvoegsel":"van",
+        "lastname":"der Staaij",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"bs-lvdp",
+        "firstname":"Louise",
+        "tussenvoegsel":"van",
+        "lastname":"der Peet",
+        "position":"BSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":4
+    },
+    {
+        "init":"ms-mbt",
+        "firstname":"Mounaim",
+        "tussenvoegsel":"Ben",
+        "lastname":"Touhami",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-aw",
+        "firstname":"Alex",
+        "lastname":"Wee",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-fi",
+        "firstname":"Falih",
+        "lastname":"Ihsan",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-lv",
+        "firstname":"Levi",
+        "lastname":"Vos",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-ap",
+        "firstname":"Alicia",
+        "lastname":"Pang",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-ra",
+        "firstname":"Rafidah",
+        "lastname":"Ashari",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-jwp",
+        "firstname":"Jan-Willem",
+        "lastname":"Phylipsen",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-al",
+        "firstname":"Anne",
+        "lastname":"Liebens",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-je",
+        "firstname":"Jari",
+        "lastname":"Egberts",
+        "position":"MSc Student",
+        "img": "img/blank.png",
+        "former": true,
+        "order":3
     }
+   
+
+
 
 ]

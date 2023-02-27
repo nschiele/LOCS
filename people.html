@@ -8,6 +8,7 @@
 
 
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="img/lock-favicon.png">
 
 
 
@@ -58,9 +59,20 @@
         return array;
         }
         function addPerson(person, where){
-            html = ""
-            html += "<div class='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4'>"
-                html += '<div class="card border-0 shadow  h-100" style="height:100%">'
+            var html = ""
+            html += "<div class="
+            if(person.hasOwnProperty("former")){
+                if(person.former){
+                html += "'col-xl-1 col-lg-2 col-md-2 col-sm-3 col-6 mb-4'" 
+                } else {
+                html += "'col-lg-3 col-md-4 col-sm-6 col-12 mb-4'"
+                }
+            }else{
+            html += "'col-lg-3 col-md-4 col-sm-6 col-12 mb-4'"
+            }
+            html += ">"
+                html += '<div class="card border-0 shadow  h-100'
+                html += '" style="height:100%">'
                         // html += '<a style="display:inline-block;" href=\'person.html?id='+person.id+'\';">'    
                         html += '<img id="pimg-'+person.init+'" src="' + person.img+ '" class="person-img card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
                         // html += '</a>'
@@ -160,7 +172,13 @@
     $(document).on('click', '.person-img', function(data) { 
         // alert(data); 
         console.log(data.target.id.split("-")[1])
-        window.location.href = 'person.html?id='+data.target.id.split("-")[1]
+        var target = data.target.id.split("-")
+        var link = target[1]
+        if(target.length > 2){
+            link+="-"
+            link+=target[2]
+        }
+        window.location.href = 'person.html?id='+link
     });
 
 
