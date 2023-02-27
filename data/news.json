@@ -14,7 +14,51 @@
         "day":20,
         "time":"10:30",
         "location":"Snellius room 403",
-        "subtitle":"Talk from Rob van der Meer",
-        "description":["Talk from Rob van der Veert of the Software Improvement Group"]
+        "subtitle":"Talk from Rob van der Veer",
+        "description":["Talk from Rob van der Veer of the Software Improvement Group"]
+    },
+    {
+        "title":"Talk",
+        "year":2022,
+        "month":11,
+        "day":18,
+        "time":"10:00",
+        "location":"Snellius room 176",
+        "subtitle":"Talk from Dr. Yury Zhauniarovich",
+        "description":["Talk from Dr. Yury Zhauniarovich about measuring the usage of Unwanted Traffic Removal Service as a DDoS mitigation technique"]
+    },
+    {
+        "title":"Talk",
+        "year":2022,
+        "month":12,
+        "day":6,
+        "time":"15:00",
+        "location":"Snellius room 176",
+        "subtitle":"Talk from Dr. Zach Smith",
+        "description":["Talk from Dr. Zach Smith about  Modelling Agent Skipping Attacks on Multiparty Protocols"]
+    },
+    {
+        "title":"Paper Presentation",
+        "year":2021,
+        "month":11,
+        "day":12,
+        "subtitle":"Nathan D Schiele presents at CRiSIS 2021",
+        "description":["Nathan D Schiele presented his paper, <i>A Novel Approach to Attack Tree to Attack Graph Transformation</i>, at CRiSIS 2021 in Ames, Iowa, USA."]
+    },
+    {
+        "title":"Presentation",
+        "year":2022,
+        "month":6,
+        "day":10,
+        "subtitle":"Xinyuan Ji presents at CompSys'22",
+        "description":["Xinyuan Ji presented about trustworthy vertical feature selection famework for federated learning at CompSys'22."]
+    },
+    {
+        "title":"Presentation",
+        "year":2023,
+        "month":3,
+        "day":30,
+        "subtitle":"Dr. Olga Gadyatskaya speakss at High-Tech Women",
+        "description":["Dr. Olga Gadyatskaya spoke at the High-Tech Women event in Darmstadt, Germany."]
     }
 ]
