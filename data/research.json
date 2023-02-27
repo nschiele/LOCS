@@ -1,10 +1,13 @@
-[{"topic":"Graphical Threat Models",
-  "description":["Lorem Ipsum"],
+[{"topic":"ADTs in Practice",
+  "description":["Attack trees are a well-established method for modeling and analyzing potential attacks on a system or network. While attack trees have been extensively studied in academic research, it is unclear to what extent these theoretical models are used in practice, and if they are used, how they are applied and adapted to real-world scenarios. This project aims to bridge this gap."],
   "img":"https://via.placeholder.com/700x300"},
   {"topic":"Secure Software Development",
   "description":["Lorem Ipsum"],
   "img":"https://via.placeholder.com/700x300"},
-  {"topic":"C-SIN",
+  {"topic":"C-SIDE",
   "description":["Lorem Ipsum"],
+  "img":"https://via.placeholder.com/700x300"},
+  {"topic":"Explainable Malware Detection",
+  "description":["he deluge of malicious application samples requires adoption of automated, AI-based techniques to detect malware. However, for practitioners it is not enough that a sample is labelled as malicious: they need to understand the reasons behind this classification decision. In our group, we investigate how different Explainable AI (XAI) techniques fare when applied for (mobile) malware detection. We research domain-specific requirements that security analysts have concerning malware detection methods and compare different XAI techniques based on these requirements."],
   "img":"https://via.placeholder.com/700x300"}
 ]
