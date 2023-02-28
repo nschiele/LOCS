@@ -67,6 +67,11 @@
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(180deg) brightness(95%) contrast(80%);
    }
 
+   .social-icons:hover {
+    filter: invert(60%) sepia(13%) saturate(2207%) hue-rotate(180deg) brightness(80%) contrast(60%);
+    cursor:pointer;
+   }
+
    .social-icons.orcid {
     filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(50deg) brightness(100%) contrast(80%);
    }

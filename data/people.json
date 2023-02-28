@@ -10,7 +10,8 @@
         "linkedin":"olgagadyatskaya",
         "orcid": "0000-0002-3760-9165",
         "~github":"vilena",
-        "email":"o.gadyatskaya@liacs.leidenuniv.nl",
+        "lu_email":"o.gadyatskaya",
+        "lu_page":"olga-gadyatskaya",
         "order":0
     },
     {
@@ -24,7 +25,7 @@
         "linkedin":"schielenathan",
         "github":"nschiele",
         "lu_email":"n.d.schiele",
-        "email":"n.d.schiele@liacs.leidenuniv.nl",
+        "lu_page":"nathan-daniel-schiele",
         "order":2,
         "description":["Nathan is a Teaching PhD Candidate from the United States. He completed his bachelors in applied mathematics at the University of Washington in Seattle, and his masters in information technology at Stuttgart Universität.", "His research focuses on examining the gap between industry and academia as it pertains to graphical threat models, specifically focusing on Attack-Defense Trees.", "In his free time, he enjoys traveling, boxing and riding his motorcycle."]
 
@@ -38,6 +39,8 @@
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/soufian-el-yadmani.jpg/soufian-el-yadmani.jpg/d200x250",
         "gscholar":"rvMusksAAAAJ",
         "linkedin":"soufianelyadmani",
+        "lu_page":"soufian-el-yadmani",
+        "lu_email":"s.el.yadmani",
         "order":2
     },
     {
@@ -47,6 +50,8 @@
         "position":"PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/rui-li.jpeg/rui-li.jpeg/d200x250",
         "linkedin":"rui-li-3625b4231",
+        "lu_email":"r.li",
+        "lu_page":"rui-li",
         "order":2
     },
     {
@@ -57,6 +62,8 @@
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/arina-kudriavtseva.jpg/arina-kudriavtseva.jpg/d200x250",
         "gscholar":"MUZ3Qq0AAAAJ",
         "linkedin":"arina-kudriavtseva-7aaa37217",
+        "lu_email":"a.kudriavtseva",
+        "lu_page":"arina-kudriavtseva",
         "order":2
     },
     {
@@ -66,6 +73,8 @@
         "position":"PhD Candidate",
         "img": "img/blank.png",
         "linkedin":"giorgos-bampilis",
+        "lu_email":"g.bampilis",
+        "lu_page":"giorgos-bampilis",
         "order":2
     },
     {
@@ -76,6 +85,8 @@
         "former":false,
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/xinyuan-ji.jpg/xinyuan-ji.jpg/d200x250",
         "linkedin":"新媛-吉-508444199",
+        "lu_email":"x.ji",
+        "lu_page":"xinyuan-ji",
         "order":2
     },
     {

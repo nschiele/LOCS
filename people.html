@@ -85,6 +85,13 @@
                             html += '</div>'
                             html += '<div class="row justify-content-center" >'
                                     var iconSize = 25
+                                    if(person.hasOwnProperty("lu_page")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://www.universiteitleiden.nl/en/staffmembers/'+person.lu_page+'\';">'  
+                                            html += "<img class='' src='img/LUicon.png' width='"+(iconSize-iconSize/20)+"' height='"+(iconSize-iconSize/20)+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
                                     if(person.hasOwnProperty("gscholar")){
                                         html += '<div class="col-2">'
                                             html += '<a href=\'https://scholar.google.com/citations?user='+person.gscholar+'\';">'  

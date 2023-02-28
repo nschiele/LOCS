@@ -78,6 +78,53 @@
             html += '<h3 class="mt-2">'
             html += person.position
             html += '</h3>'
+            if (person.hasOwnProperty("lu_email")) {
+                    html += '<p><b>Email: </b>'
+                    html += person.lu_email
+                    html += ' @ liacs.leidenuniv.nl</p>'
+                
+            }
+            html += '</div>'
+            html += '<div class="row justify-content-center" >'
+                                    var iconSize = 25
+                                    if(person.hasOwnProperty("lu_page")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://www.universiteitleiden.nl/en/staffmembers/'+person.lu_page+'\';">'  
+                                            html += "<img class='' src='img/LUicon.png' width='"+(iconSize-iconSize/20)+"' height='"+(iconSize-iconSize/20)+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("gscholar")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://scholar.google.com/citations?user='+person.gscholar+'\';">'  
+                                            html += "<img class='social-icons' src='img/google.png' width='"+(iconSize-iconSize/10)+"' height='"+(iconSize-iconSize/10)+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("linkedin")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://www.linkedin.com/in/'+person.linkedin+'\';">'  
+                                            html += "<img class='social-icons' src='img/linkedin.png' width='"+iconSize+"' height='"+iconSize+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("orcid")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://orcid.org/'+person.orcid+'\';">'  
+                                            html += "<img class='social-icons orcid' src='img/orcid.png' width='"+iconSize+"' height='"+iconSize+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    if(person.hasOwnProperty("github")){
+                                        html += '<div class="col-2">'
+                                            html += '<a href=\'https://github.com/'+person.github+'\';">'  
+                                            html += "<img class='social-icons' src='img/github.png' width='"+(iconSize-iconSize/20)+"' height='"+(iconSize-iconSize/20)+"' style='object-fit: contain;'>"
+                                            html += '</a>'
+                                        html += '</div>'
+                                    }
+                                    // html += '<div class="card-text text-black-50">' + person.position+ '</div>'
+                            html += '</div>'
+                            html += "<div class='row mt-2'>"
             if (person.hasOwnProperty("description")) {
                 for (i in person.description) {
                     html += '<p>'
