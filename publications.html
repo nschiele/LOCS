@@ -44,16 +44,37 @@
             console.log(data)
         })
         .done(function(data) {
-            h = ""
+            var pubsByYear = {}
             for (var i in publist) {
-                console.log(publist[i])
+                const year = publist[i].year;
+                if (pubsByYear[year]) {
+                pubsByYear[year].push(publist[i]);
+                } else {
+                    pubsByYear[year] = [publist[i]];
+                }
+            }
+            console.log(pubsByYear)
+            var h = ""
+            // for (var i in publist) {
+            //     console.log(publist[i])
+            //     h += "<div class='row mt-3'>"
+            //     h+= "<p>"
+            //     h += cite(publist[i])
+            //     h+= "</p>"
+            //     console.log(cite(publist[i]), publist[i], h)
+            //     h += "</div>"
+                
+            // }
+            const keys = Object.keys(pubsByYear).sort((a, b) => b - a);
+            for (let i = 0; i < keys.length; i++) {
+                const key = keys[i];
+                for(var j in pubsByYear[key]){
                 h += "<div class='row mt-3'>"
                 h+= "<p>"
-                h += cite(publist[i])
+                h += cite(pubsByYear[key][j])
                 h+= "</p>"
-                console.log(cite(publist[i]), publist[i], h)
                 h += "</div>"
-                
+                }
             }
             $("#pubs").append(h)
         });
@@ -84,7 +105,7 @@
     <div class="container">
 
         <!-- Page Heading -->
-        <h1 class="my-4">Publications
+        <h1 class="my-4">Selected Publications
             <small></small>
         </h1>
 

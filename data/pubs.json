@@ -24,13 +24,26 @@
 
   {
     "id": "3",
-    "title": "  Secure Software Development Methodologies: A Multivocal Literature Review",
+    "title": "Secure Software Development Methodologies: A Multivocal Literature Review",
     "author": "Kudriavtseva and Gadyatskaya",
     "author-codes":["ak","og"],
     "year": "2022",
     "type": "pre",
     "pdf": "https://arxiv.org/pdf/2211.16987.pdf",
     "doi":"https://doi.org/10.48550/arXiv.2211.16987"
+  },
+  {
+    "id": "4",
+    "title": "Towards Combining Several Android Instrumentation Tools.",
+    "author": "A. van der Staaij & O. Gadyatskaya",
+    "author-codes":["bs-avds","og"],
+    "year": "2022",
+    "type": "conf",
+    "journal": "In Proceedings of ACNS 2022 Satellite Workshop SecMT",
+    "pages":"495-512",
+    "publisher": "Springer International Publishing",
+    "pdf": "https://arxiv.org/abs/2110.02553.pdf",
+    "doi":"https://doi.org/10.1007/978-3-031-02067-4_5"
   }
 
 ]
