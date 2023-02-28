@@ -26,34 +26,103 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="people.js"></script>
     <script>
+
+
         $(document).ready(function () {
-        $.getJSON('research.json', function (data) {
-            console.log(data)
-        })
-            .done(function (data) {
-                h = ""
-                for (var i in data) {
-                    h += '<div class="row">'
-                    h += '<div class="col-md-5">'
-                    h += '    <a href="#">'
-                    h += '    <img class="img-fluid rounded mb-3 mb-md-0" src="'+data[i].img+'" alt="">'
-                    h += '    </a>'
-                    h += '</div>'
-                    h += '<div class="col-md-7">'
-                    h += '    <h3>'+data[i].topic+'</h3>'
-                    for(j in data[i].description){
-                        h += '    <p>'
-                        h += data[i].description[j]
-                        h +=  '  </p>'
-                    }
-                    h += '</div>'
-                    h += '</div>'
-                    h += '<hr>'
-                }
-                $("#research").append(h)
-            });});
+
+            $(".clickable-row").click(function () {
+                window.location = $(this).data("href");
+            });
+
+            $.getJSON('data/people.json', function (people) {
+                console.log(people)
+            }).done(function (people) {
+            $.getJSON('data/courses.json', function (courses) {
+                console.log(courses)
+            })
+                .done(function (courses) {
+                    h = ""
+                    let html = '';
+
+                    courses.forEach(course => {
+                        html += `
+                            <div class="row hover-row">
+                            <div class="col">
+                                <h2 class="course-title">${course.title}</h2>
+                                <ul class="course-years">
+                        `;
+
+                        course.links.forEach(year => {
+                            console.log(year)
+                            html += `
+                                <li><a href="${year.link}">${year.label}</a></li>
+                            `;
+                        });
+
+                        html += `
+                                </ul>
+                                <p class="course-description">${course.description}</p>
+                                <ul class="course-teachers">
+                                    <li> Taught by:</li> 
+                                 `;
+
+                        course.teachers.forEach(teacher => {
+                            var person = codeToPerson(people, teacher)
+                            console.log(formatName(person))
+                            html += `
+                                <li><a href='person.html?id=${teacher}'>${formatName(person)}</a></li>
+                            `;
+                        });
+                        
+                        html += `
+                            </ul>
+                            </div>
+                        </div>
+                        <br>
+                        `;
+                    });
+                    $("#courses").append(html)
+                });
+        });
+    });
     </script>
+    <style>
+        .hover-row:hover {
+            background-color: #f7f7f79a;
+        }
+
+        .course-title {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .course-years {
+            list-style-type: none;
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .course-years li {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .course-teachers li {
+            display: inline-block;
+            margin-right: 50px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .course-years li:hover {
+            background-color: #61e2e62f;
+            border-radius: 5px;
+        }
+    </style>
 
 
 
@@ -91,6 +160,8 @@
 
     </div>
     <div class="container" id="courses">
+
+
 
 
     </div>
