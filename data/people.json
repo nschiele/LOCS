@@ -28,7 +28,6 @@
         "lu_page":"nathan-daniel-schiele",
         "order":2,
         "description":["Nathan is a Teaching PhD Candidate from the United States. He completed his bachelors in applied mathematics at the University of Washington in Seattle, and his masters in information technology at Stuttgart Universität.", "His research focuses on examining the gap between industry and academia as it pertains to graphical threat models, specifically focusing on Attack-Defense Trees.", "In his free time, he enjoys traveling, boxing and riding his motorcycle."]
-
     },
     {
         "init":"sey",
@@ -71,7 +70,6 @@
         "firstname":"Giorgos",
         "lastname":"Bampilis",
         "position":"PhD Candidate",
-        "img": "img/blank.png",
         "linkedin":"giorgos-bampilis",
         "lu_email":"g.bampilis",
         "lu_page":"giorgos-bampilis",
@@ -94,7 +92,7 @@
         "firstname":"Max",
         "lastname":"Staallekker",
         "position":"MSc Student",
-        "img": "img/blank.png",
+        "former":true,
         "order":3
     },
     {
@@ -102,8 +100,7 @@
         "firstname":"Stuart",
         "lastname":"Gunput",
         "position":"MSc Student",
-        "img": "img/blank.png",
-        "former":false,
+        "former":true,
         "order":3
     },
     {
@@ -127,7 +124,6 @@
         "firstname":"Shamir",
         "lastname":"Abdul",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "order":3
     },
     {
@@ -135,7 +131,6 @@
         "firstname":"Cem",
         "lastname":"Ayerdem",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "order":4
     },
     {
@@ -143,7 +138,6 @@
         "firstname":"Feiyang",
         "lastname":"Sun",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "order":3
     },
     {
@@ -151,7 +145,6 @@
         "firstname":"Daniel",
         "lastname":"Kuiper",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "order":4
     },
     {
@@ -159,7 +152,6 @@
         "firstname":"Jimmy",
         "lastname":"Oei",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "order":4
     },
     {
@@ -168,7 +160,6 @@
         "tussenvoegsel":"van",
         "lastname":"Popele",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "linkedin":"steven-van-popele-a77648253",
         "order":4
     },
@@ -185,15 +176,14 @@
         "firstname":"Marwa",
         "lastname":"Mohalaia",
         "position":"BSc Student",
-        "img": "img/blank.png",
+        "linkedin":"marwa-m7",
         "order":4
     },
     {
         "init":"bs-rt",
         "firstname":"Robin",
         "lastname":"The",
-        "position":"BSc Student",
-        "img": "img/blank.png",
+        "position":"BSc Student", 
         "linkedin":"robin-the",
         "former": true,
         "order":4
@@ -203,7 +193,6 @@
         "firstname":"Oussama",
         "lastname":"Soulimani",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -212,7 +201,6 @@
         "firstname":"Dennis",
         "lastname":"Buurman",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -221,7 +209,6 @@
         "firstname":"Kevin",
         "lastname":"Hulsker",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -230,7 +217,6 @@
         "firstname":"Corne",
         "lastname":"Spek",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -239,7 +225,6 @@
         "firstname":"Arian",
         "lastname":"Doek",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -249,7 +234,6 @@
         "tussenvoegsel":"van",
         "lastname":"der Staaij",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -259,7 +243,6 @@
         "tussenvoegsel":"van",
         "lastname":"der Peet",
         "position":"BSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":4
     },
@@ -278,7 +261,6 @@
         "firstname":"Alex",
         "lastname":"Wee",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -287,7 +269,6 @@
         "firstname":"Falih",
         "lastname":"Ihsan",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -296,7 +277,6 @@
         "firstname":"Levi",
         "lastname":"Vos",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -305,7 +285,6 @@
         "firstname":"Alicia",
         "lastname":"Pang",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -314,7 +293,6 @@
         "firstname":"Rafidah",
         "lastname":"Ashari",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -323,7 +301,6 @@
         "firstname":"Jan-Willem",
         "lastname":"Phylipsen",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -332,7 +309,6 @@
         "firstname":"Anne",
         "lastname":"Liebens",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
         "order":3
     },
@@ -341,8 +317,24 @@
         "firstname":"Jari",
         "lastname":"Egberts",
         "position":"MSc Student",
-        "img": "img/blank.png",
         "former": true,
+        "order":3
+    },
+    {
+        "init":"ms-tvdv",
+        "firstname":"Tim",
+        "tussenvoegsel":"van de",
+        "lastname":"Ven",
+        "position":"MSc Student",
+        "former": false,
+        "order":3
+    },
+    {
+        "init":"ms-jt",
+        "firstname":"Joana",
+        "lastname":"Trashlieva",
+        "position":"MSc Student",
+        "former": false,
         "order":3
     }
    

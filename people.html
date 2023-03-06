@@ -74,7 +74,13 @@
                 html += '<div class="card border-0 shadow  h-100'
                 html += '" style="height:100%">'
                         // html += '<a style="display:inline-block;" href=\'person.html?id='+person.id+'\';">'    
-                        html += '<img id="pimg-'+person.init+'" src="' + person.img+ '" class="person-img card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
+                        html += '<img id="pimg-'+person.init+'" src="' 
+                        if(person.hasOwnProperty("img")){
+                        html += person.img
+                        } else {
+                            html += "img/blank.png"
+                        }
+                        html += '" class="person-img card-img-top  img-responsive" alt="..." style="object-fit: cover;    overflow: hidden; height: 100%;">'
                         // html += '</a>'
                         html += '<div class="card-body text-center">'
                             html += '<div class="row" onclick="location.href=\'person.html?id='+person.init+'\';" style="cursor: pointer;">'
