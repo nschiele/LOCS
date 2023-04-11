@@ -34,25 +34,15 @@
         ]
     },
     {
-        "init": "sey",
-        "firstname": "Soufian",
-        "tussenvoegsel": "El",
-        "lastname": "Yadmani",
+        "init": "xj",
+        "firstname": "Xinyuan",
+        "lastname": "Ji",
         "position": "PhD Candidate",
-        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/soufian-el-yadmani.jpg/soufian-el-yadmani.jpg/d200x250",
-        "gscholar": "rvMusksAAAAJ",
-        "linkedin": "soufianelyadmani",
-        "lu_page": "soufian-el-yadmani",
-        "lu_email": "s.el.yadmani",
-        "order": 2
-    },
-    {
-        "init": "ja",
-        "firstname": "Jafar",
-        "lastname": "Akhoundali",
-        "position": "PhD Candidate",
-        "lu_email": "j.akhoundali",
-        "lu_page": "jafar-akhoundali",
+        "former": false,
+        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/xinyuan-ji.jpg/xinyuan-ji.jpg/d200x250",
+        "linkedin": "新媛-吉-508444199",
+        "lu_email": "x.ji",
+        "lu_page": "xinyuan-ji",
         "order": 2
     },
     {
@@ -64,6 +54,19 @@
         "linkedin": "rui-li-3625b4231",
         "lu_email": "r.li",
         "lu_page": "rui-li",
+        "order": 2
+    },
+    {
+        "init": "sey",
+        "firstname": "Soufian",
+        "tussenvoegsel": "El",
+        "lastname": "Yadmani",
+        "position": "PhD Candidate",
+        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/soufian-el-yadmani.jpg/soufian-el-yadmani.jpg/d200x250",
+        "gscholar": "rvMusksAAAAJ",
+        "linkedin": "soufianelyadmani",
+        "lu_page": "soufian-el-yadmani",
+        "lu_email": "s.el.yadmani",
         "order": 2
     },
     {
@@ -79,15 +82,12 @@
         "order": 2
     },
     {
-        "init": "xj",
-        "firstname": "Xinyuan",
-        "lastname": "Ji",
+        "init": "ja",
+        "firstname": "Jafar",
+        "lastname": "Akhoundali",
         "position": "PhD Candidate",
-        "former": false,
-        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/xinyuan-ji.jpg/xinyuan-ji.jpg/d200x250",
-        "linkedin": "新媛-吉-508444199",
-        "lu_email": "x.ji",
-        "lu_page": "xinyuan-ji",
+        "lu_email": "j.akhoundali",
+        "lu_page": "jafar-akhoundali",
         "order": 2
     },
     {
