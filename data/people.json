@@ -1,344 +1,354 @@
 [
     {
-        "init":"og",
-        "title":"Dr.",
-        "firstname":"Olga",
-        "lastname":"Gadyatskaya",
-        "position":"Assistant Professor",
+        "init": "og",
+        "title": "Dr.",
+        "firstname": "Olga",
+        "lastname": "Gadyatskaya",
+        "position": "Assistant Professor",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/portraits/science/g/olga-gadyatskaya.jpg/olga-gadyatskaya.jpg/d200x250",
-        "gscholar":"QD3DU0wAAAAJ",
-        "linkedin":"olgagadyatskaya",
+        "gscholar": "QD3DU0wAAAAJ",
+        "linkedin": "olgagadyatskaya",
         "orcid": "0000-0002-3760-9165",
-        "~github":"vilena",
-        "lu_email":"o.gadyatskaya",
-        "lu_page":"olga-gadyatskaya",
-        "order":0
+        "~github": "vilena",
+        "lu_email": "o.gadyatskaya",
+        "lu_page": "olga-gadyatskaya",
+        "order": 0
     },
     {
-        "init":"nds",
-        "firstname":"Nathan Daniel",
-        "lastname":"Schiele",
-        "position":"PhD Candidate",
+        "init": "nds",
+        "firstname": "Nathan Daniel",
+        "lastname": "Schiele",
+        "position": "PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/nathanschiele.png/nathanschiele.png/d200x250",
-        "gscholar":"vSrAKUUAAAAJ",
+        "gscholar": "vSrAKUUAAAAJ",
         "orcid": "0000-0003-1186-1503",
-        "linkedin":"schielenathan",
-        "github":"nschiele",
-        "lu_email":"n.d.schiele",
-        "lu_page":"nathan-daniel-schiele",
-        "order":2,
-        "description":["Nathan is a Teaching PhD Candidate from the United States. He completed his bachelors in applied mathematics at the University of Washington in Seattle, and his masters in information technology at Stuttgart Universität.", "His research focuses on examining the gap between industry and academia as it pertains to graphical threat models, specifically focusing on Attack-Defense Trees.", "In his free time, he enjoys traveling, boxing and riding his motorcycle."]
+        "linkedin": "schielenathan",
+        "github": "nschiele",
+        "lu_email": "n.d.schiele",
+        "lu_page": "nathan-daniel-schiele",
+        "order": 2,
+        "description": [
+            "Nathan is a Teaching PhD Candidate from the United States. He completed his bachelors in applied mathematics at the University of Washington in Seattle, and his masters in information technology at Stuttgart Universität.",
+            "His research focuses on examining the gap between industry and academia as it pertains to graphical threat models, specifically focusing on Attack-Defense Trees.",
+            "In his free time, he enjoys traveling, boxing and riding his motorcycle."
+        ]
     },
     {
-        "init":"sey",
-        "firstname":"Soufian",
-        "tussenvoegsel":"El",
-        "lastname":"Yadmani",
-        "position":"PhD Candidate",
+        "init": "sey",
+        "firstname": "Soufian",
+        "tussenvoegsel": "El",
+        "lastname": "Yadmani",
+        "position": "PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/soufian-el-yadmani.jpg/soufian-el-yadmani.jpg/d200x250",
-        "gscholar":"rvMusksAAAAJ",
-        "linkedin":"soufianelyadmani",
-        "lu_page":"soufian-el-yadmani",
-        "lu_email":"s.el.yadmani",
-        "order":2
+        "gscholar": "rvMusksAAAAJ",
+        "linkedin": "soufianelyadmani",
+        "lu_page": "soufian-el-yadmani",
+        "lu_email": "s.el.yadmani",
+        "order": 2
     },
     {
-        "init":"rl",
-        "firstname":"Rui",
-        "lastname":"Li",
-        "position":"PhD Candidate",
+        "init": "ja",
+        "firstname": "Jafar",
+        "lastname": "Akhoundali",
+        "position": "PhD Candidate",
+        "lu_email": "j.akhoundali",
+        "lu_page": "jafar-akhoundali",
+        "order": 2
+    },
+    {
+        "init": "rl",
+        "firstname": "Rui",
+        "lastname": "Li",
+        "position": "PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/rui-li.jpeg/rui-li.jpeg/d200x250",
-        "linkedin":"rui-li-3625b4231",
-        "lu_email":"r.li",
-        "lu_page":"rui-li",
-        "order":2
+        "linkedin": "rui-li-3625b4231",
+        "lu_email": "r.li",
+        "lu_page": "rui-li",
+        "order": 2
     },
     {
-        "init":"ak",
-        "firstname":"Arina",
-        "lastname":"Kudriavtseva",
-        "position":"PhD Candidate",
+        "init": "ak",
+        "firstname": "Arina",
+        "lastname": "Kudriavtseva",
+        "position": "PhD Candidate",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/arina-kudriavtseva.jpg/arina-kudriavtseva.jpg/d200x250",
-        "gscholar":"MUZ3Qq0AAAAJ",
-        "linkedin":"arina-kudriavtseva-7aaa37217",
-        "lu_email":"a.kudriavtseva",
-        "lu_page":"arina-kudriavtseva",
-        "order":2
+        "gscholar": "MUZ3Qq0AAAAJ",
+        "linkedin": "arina-kudriavtseva-7aaa37217",
+        "lu_email": "a.kudriavtseva",
+        "lu_page": "arina-kudriavtseva",
+        "order": 2
     },
     {
-        "init":"gb",
-        "firstname":"Giorgos",
-        "lastname":"Bampilis",
-        "position":"PhD Candidate",
-        "linkedin":"giorgos-bampilis",
-        "lu_email":"g.bampilis",
-        "lu_page":"giorgos-bampilis",
-        "order":2
-    },
-    {
-        "init":"xj",
-        "firstname":"Xinyuan",
-        "lastname":"Ji",
-        "position":"PhD Candidate",
-        "former":false,
+        "init": "xj",
+        "firstname": "Xinyuan",
+        "lastname": "Ji",
+        "position": "PhD Candidate",
+        "former": false,
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/xinyuan-ji.jpg/xinyuan-ji.jpg/d200x250",
-        "linkedin":"新媛-吉-508444199",
-        "lu_email":"x.ji",
-        "lu_page":"xinyuan-ji",
-        "order":2
+        "linkedin": "新媛-吉-508444199",
+        "lu_email": "x.ji",
+        "lu_page": "xinyuan-ji",
+        "order": 2
     },
     {
-        "init":"ms-ms",
-        "firstname":"Max",
-        "lastname":"Staallekker",
-        "position":"MSc Student",
-        "former":true,
-        "order":3
+        "init": "gb",
+        "firstname": "Giorgos",
+        "lastname": "Bampilis",
+        "position": "PhD Candidate",
+        "linkedin": "giorgos-bampilis",
+        "lu_email": "g.bampilis",
+        "lu_page": "giorgos-bampilis",
+        "order": 2,
+        "former": true
     },
     {
-        "init":"ms-sg",
-        "firstname":"Stuart",
-        "lastname":"Gunput",
-        "position":"MSc Student",
-        "former":true,
-        "order":3
+        "init": "ms-ms",
+        "firstname": "Max",
+        "lastname": "Staallekker",
+        "position": "MSc Student",
+        "former": true,
+        "order": 3
     },
     {
-        "init":"ms-yw",
-        "firstname":"Yun",
-        "lastname":"Wan",
-        "position":"MSc Student",
+        "init": "ms-sg",
+        "firstname": "Stuart",
+        "lastname": "Gunput",
+        "position": "MSc Student",
+        "former": true,
+        "order": 3
+    },
+    {
+        "init": "ms-yw",
+        "firstname": "Yun",
+        "lastname": "Wan",
+        "position": "MSc Student",
         "img": "img/blank.png",
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-ya",
-        "firstname":"Yu Ang",
-        "lastname":"Yuan",
-        "position":"MSc Student",
+        "init": "ms-ya",
+        "firstname": "Yu Ang",
+        "lastname": "Yuan",
+        "position": "MSc Student",
         "img": "img/blank.png",
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-sa",
-        "firstname":"Shamir",
-        "lastname":"Abdul",
-        "position":"MSc Student",
-        "order":3
+        "init": "ms-sa",
+        "firstname": "Shamir",
+        "lastname": "Abdul",
+        "position": "MSc Student",
+        "order": 3
     },
     {
-        "init":"ms-ca",
-        "firstname":"Cem",
-        "lastname":"Ayerdem",
-        "position":"BSc Student",
-        "order":4
+        "init": "ms-ca",
+        "firstname": "Cem",
+        "lastname": "Ayerdem",
+        "position": "BSc Student",
+        "order": 4
     },
     {
-        "init":"ms-fs",
-        "firstname":"Feiyang",
-        "lastname":"Sun",
-        "position":"MSc Student",
-        "order":3
+        "init": "ms-fs",
+        "firstname": "Feiyang",
+        "lastname": "Sun",
+        "position": "MSc Student",
+        "order": 3
     },
     {
-        "init":"bs-dk",
-        "firstname":"Daniel",
-        "lastname":"Kuiper",
-        "position":"BSc Student",
-        "order":4
+        "init": "bs-dk",
+        "firstname": "Daniel",
+        "lastname": "Kuiper",
+        "position": "BSc Student",
+        "order": 4
     },
     {
-        "init":"bs-jo",
-        "firstname":"Jimmy",
-        "lastname":"Oei",
-        "position":"BSc Student",
-        "order":4
+        "init": "bs-jo",
+        "firstname": "Jimmy",
+        "lastname": "Oei",
+        "position": "BSc Student",
+        "order": 4
     },
     {
-        "init":"bs-svp",
-        "firstname":"Steven",
-        "tussenvoegsel":"van",
-        "lastname":"Popele",
-        "position":"BSc Student",
-        "linkedin":"steven-van-popele-a77648253",
-        "order":4
+        "init": "bs-svp",
+        "firstname": "Steven",
+        "tussenvoegsel": "van",
+        "lastname": "Popele",
+        "position": "BSc Student",
+        "linkedin": "steven-van-popele-a77648253",
+        "order": 4
     },
     {
-        "init":"bs-sm",
-        "firstname":"Stephan",
-        "lastname":"Meza",
-        "position":"BSc Student",
+        "init": "bs-sm",
+        "firstname": "Stephan",
+        "lastname": "Meza",
+        "position": "BSc Student",
         "img": "img/blank.png",
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-mm",
-        "firstname":"Marwa",
-        "lastname":"Mohalaia",
-        "position":"BSc Student",
-        "linkedin":"marwa-m7",
-        "order":4
+        "init": "bs-mm",
+        "firstname": "Marwa",
+        "lastname": "Mohalaia",
+        "position": "BSc Student",
+        "linkedin": "marwa-m7",
+        "order": 4
     },
     {
-        "init":"bs-rt",
-        "firstname":"Robin",
-        "lastname":"The",
-        "position":"BSc Student", 
-        "linkedin":"robin-the",
+        "init": "bs-rt",
+        "firstname": "Robin",
+        "lastname": "The",
+        "position": "BSc Student",
+        "linkedin": "robin-the",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-os",
-        "firstname":"Oussama",
-        "lastname":"Soulimani",
-        "position":"BSc Student",
+        "init": "bs-os",
+        "firstname": "Oussama",
+        "lastname": "Soulimani",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-db",
-        "firstname":"Dennis",
-        "lastname":"Buurman",
-        "position":"BSc Student",
+        "init": "bs-db",
+        "firstname": "Dennis",
+        "lastname": "Buurman",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-kh",
-        "firstname":"Kevin",
-        "lastname":"Hulsker",
-        "position":"BSc Student",
+        "init": "bs-kh",
+        "firstname": "Kevin",
+        "lastname": "Hulsker",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-cs",
-        "firstname":"Corne",
-        "lastname":"Spek",
-        "position":"BSc Student",
+        "init": "bs-cs",
+        "firstname": "Corne",
+        "lastname": "Spek",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-ad",
-        "firstname":"Arian",
-        "lastname":"Doek",
-        "position":"BSc Student",
+        "init": "bs-ad",
+        "firstname": "Arian",
+        "lastname": "Doek",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-avds",
-        "firstname":"Arthur",
-        "tussenvoegsel":"van",
-        "lastname":"der Staaij",
-        "position":"BSc Student",
+        "init": "bs-avds",
+        "firstname": "Arthur",
+        "tussenvoegsel": "van",
+        "lastname": "der Staaij",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"bs-lvdp",
-        "firstname":"Louise",
-        "tussenvoegsel":"van",
-        "lastname":"der Peet",
-        "position":"BSc Student",
+        "init": "bs-lvdp",
+        "firstname": "Louise",
+        "tussenvoegsel": "van",
+        "lastname": "der Peet",
+        "position": "BSc Student",
         "former": true,
-        "order":4
+        "order": 4
     },
     {
-        "init":"ms-mbt",
-        "firstname":"Mounaim",
-        "tussenvoegsel":"Ben",
-        "lastname":"Touhami",
-        "position":"MSc Student",
+        "init": "ms-mbt",
+        "firstname": "Mounaim",
+        "tussenvoegsel": "Ben",
+        "lastname": "Touhami",
+        "position": "MSc Student",
         "img": "img/blank.png",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-aw",
-        "firstname":"Alex",
-        "lastname":"Wee",
-        "position":"MSc Student",
+        "init": "ms-aw",
+        "firstname": "Alex",
+        "lastname": "Wee",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-fi",
-        "firstname":"Falih",
-        "lastname":"Ihsan",
-        "position":"MSc Student",
+        "init": "ms-fi",
+        "firstname": "Falih",
+        "lastname": "Ihsan",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-lv",
-        "firstname":"Levi",
-        "lastname":"Vos",
-        "position":"MSc Student",
+        "init": "ms-lv",
+        "firstname": "Levi",
+        "lastname": "Vos",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-ap",
-        "firstname":"Alicia",
-        "lastname":"Pang",
-        "position":"MSc Student",
+        "init": "ms-ap",
+        "firstname": "Alicia",
+        "lastname": "Pang",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-ra",
-        "firstname":"Rafidah",
-        "lastname":"Ashari",
-        "position":"MSc Student",
+        "init": "ms-ra",
+        "firstname": "Rafidah",
+        "lastname": "Ashari",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-jwp",
-        "firstname":"Jan-Willem",
-        "lastname":"Phylipsen",
-        "position":"MSc Student",
+        "init": "ms-jwp",
+        "firstname": "Jan-Willem",
+        "lastname": "Phylipsen",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-al",
-        "firstname":"Anne",
-        "lastname":"Liebens",
-        "position":"MSc Student",
+        "init": "ms-al",
+        "firstname": "Anne",
+        "lastname": "Liebens",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-je",
-        "firstname":"Jari",
-        "lastname":"Egberts",
-        "position":"MSc Student",
+        "init": "ms-je",
+        "firstname": "Jari",
+        "lastname": "Egberts",
+        "position": "MSc Student",
         "former": true,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-tvdv",
-        "firstname":"Tim",
-        "tussenvoegsel":"van de",
-        "lastname":"Ven",
-        "position":"MSc Student",
+        "init": "ms-tvdv",
+        "firstname": "Tim",
+        "tussenvoegsel": "van de",
+        "lastname": "Ven",
+        "position": "MSc Student",
         "former": false,
-        "order":3
+        "order": 3
     },
     {
-        "init":"ms-jt",
-        "firstname":"Joana",
-        "lastname":"Trashlieva",
-        "position":"MSc Student",
+        "init": "ms-jt",
+        "firstname": "Joana",
+        "lastname": "Trashlieva",
+        "position": "MSc Student",
         "former": false,
-        "order":3
+        "order": 3
     }
-   
-
-
-
 ]
