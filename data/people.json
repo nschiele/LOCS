@@ -123,6 +123,7 @@
         "lastname": "Wan",
         "position": "MSc Student",
         "img": "img/blank.png",
+        "former": true,
         "order": 3
     },
     {
@@ -347,6 +348,14 @@
         "init": "ms-jt",
         "firstname": "Joana",
         "lastname": "Trashlieva",
+        "position": "MSc Student",
+        "former": false,
+        "order": 3
+    },
+    {
+        "init": "ms-sy",
+        "firstname": "Shihang",
+        "lastname": "Yu",
         "position": "MSc Student",
         "former": false,
         "order": 3
