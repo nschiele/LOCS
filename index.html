@@ -90,7 +90,8 @@
                         order.push(data[i])
                     }
                     console.log(order)
-                    order.sort((a, b) => (b.year - a.year) * 100 + (b.month - a.month) * 10 + (b.day - a.day))
+
+                    order.sort((a, b) => (b.year - a.year) * 10000 + (b.month - a.month) * 100 + (b.day - a.day))
                     console.log(order)
                     for (i in order) {
                         addNews(order[i]);

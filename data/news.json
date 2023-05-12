@@ -1,64 +1,98 @@
 [
     {
-        "title":"Paper Presentation",
-        "year":2022,
-        "month":10,
-        "day":19,
-        "subtitle":"Soufian El Yadmani presents at ONE Conference",
-        "description":["Soufian El Yadmani presented his paper, <i>How security professionals are being attacked: A study of malicious CVE proof of concept exploits in GitHub</i>, at ONE conference in The Hague."]
+        "title": "Paper Presentation",
+        "year": 2022,
+        "month": 10,
+        "day": 19,
+        "subtitle": "Soufian El Yadmani presents at ONE Conference",
+        "description": [
+            "Soufian El Yadmani presented his paper, <i>How security professionals are being attacked: A study of malicious CVE proof of concept exploits in GitHub</i>, at ONE conference in The Hague."
+        ]
     },
     {
-        "title":"Talk",
-        "year":2023,
-        "month":1,
-        "day":20,
-        "time":"10:30",
-        "location":"Snellius room 403",
-        "subtitle":"Talk from Rob van der Veer",
-        "description":["Talk from Rob van der Veer of the Software Improvement Group"]
+        "title": "Talk",
+        "year": 2023,
+        "month": 1,
+        "day": 20,
+        "time": "10:30",
+        "location": "Snellius room 403",
+        "subtitle": "Talk from Rob van der Veer",
+        "description": [
+            "Talk from Rob van der Veer of the Software Improvement Group"
+        ]
     },
     {
-        "title":"Talk",
-        "year":2022,
-        "month":11,
-        "day":18,
-        "time":"10:00",
-        "location":"Snellius room 176",
-        "subtitle":"Talk from Dr. Yury Zhauniarovich",
-        "description":["Talk from Dr. Yury Zhauniarovich about measuring the usage of Unwanted Traffic Removal Service as a DDoS mitigation technique"]
+        "title": "Talk",
+        "year": 2022,
+        "month": 11,
+        "day": 18,
+        "time": "10:00",
+        "location": "Snellius room 176",
+        "subtitle": "Talk from Dr. Yury Zhauniarovich",
+        "description": [
+            "Talk from Dr. Yury Zhauniarovich about measuring the usage of Unwanted Traffic Removal Service as a DDoS mitigation technique"
+        ]
     },
     {
-        "title":"Talk",
-        "year":2022,
-        "month":12,
-        "day":6,
-        "time":"15:00",
-        "location":"Snellius room 176",
-        "subtitle":"Talk from Dr. Zach Smith",
-        "description":["Talk from Dr. Zach Smith about  Modelling Agent Skipping Attacks on Multiparty Protocols"]
+        "title": "Talk",
+        "year": 2022,
+        "month": 12,
+        "day": 6,
+        "time": "15:00",
+        "location": "Snellius room 176",
+        "subtitle": "Talk from Dr. Zach Smith",
+        "description": [
+            "Talk from Dr. Zach Smith about  Modelling Agent Skipping Attacks on Multiparty Protocols"
+        ]
     },
     {
-        "title":"Paper Presentation",
-        "year":2021,
-        "month":11,
-        "day":12,
-        "subtitle":"Nathan D Schiele presents at CRiSIS 2021",
-        "description":["Nathan D Schiele presented his paper, <i>A Novel Approach to Attack Tree to Attack Graph Transformation</i>, at CRiSIS 2021 in Ames, Iowa, USA."]
+        "title": "Paper Presentation",
+        "year": 2021,
+        "month": 11,
+        "day": 12,
+        "subtitle": "Nathan D Schiele presents at CRiSIS 2021",
+        "description": [
+            "Nathan D Schiele presented his paper, <i>A Novel Approach to Attack Tree to Attack Graph Transformation</i>, at CRiSIS 2021 in Ames, Iowa, USA."
+        ]
     },
     {
-        "title":"Presentation",
-        "year":2022,
-        "month":6,
-        "day":10,
-        "subtitle":"Xinyuan Ji presents at CompSys'22",
-        "description":["Xinyuan Ji presented about trustworthy vertical feature selection famework for federated learning at CompSys'22."]
+        "title": "Presentation",
+        "year": 2022,
+        "month": 6,
+        "day": 10,
+        "subtitle": "Xinyuan Ji presents at CompSys'22",
+        "description": [
+            "Xinyuan Ji presented about trustworthy vertical feature selection famework for federated learning at CompSys'22."
+        ]
     },
     {
-        "title":"Presentation",
-        "year":2023,
-        "month":3,
-        "day":30,
-        "subtitle":"Dr. Olga Gadyatskaya speakss at High-Tech Women",
-        "description":["Dr. Olga Gadyatskaya spoke at the High-Tech Women event in Darmstadt, Germany."]
+        "title": "Presentation",
+        "year": 2023,
+        "month": 3,
+        "day": 30,
+        "subtitle": "Dr. Olga Gadyatskaya speaks at High-Tech Women",
+        "description": [
+            "Dr. Olga Gadyatskaya spoke at the High-Tech Women event in Darmstadt, Germany."
+        ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2023,
+        "month": 5,
+        "day": 8,
+        "subtitle": "LOCS hosts teaching ethics in cyber security workshop",
+        "description": [
+            "LOCS hosted a workshop aimed at cyber security educators we will have an opportunity to discuss our ideas in a friendly setting, and to share best practices and tips for teaching ethics."
+        ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2023,
+        "month": 4,
+        "day": 20,
+        "subtitle": "Arina Kudriavtseva speaks at ICT Open 2023",
+        "description": [
+            "Arina Kudriavtseva speaks about her research at ICT Open 2023 and the 2023 INTERSCT Conference"
+        ]
     }
 ]

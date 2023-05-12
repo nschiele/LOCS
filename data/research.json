@@ -1,14 +1,53 @@
-[{"topic":"ADTs in Practice",
-  "description":["Attack trees are a well-established method for modeling and analyzing potential attacks on a system or network. While attack trees have been extensively studied in academic research, it is unclear to what extent these theoretical models are used in practice, and if they are used, how they are applied and adapted to real-world scenarios. This project aims to bridge this gap."],
-  "img":"https://via.placeholder.com/700x300"},
-  {"topic":"C-SIDE: Secure Software Development",
-  "description":["The goal of Project C-SIDE is the development of a design methodology for software development that integrates non-technical aspects of cyber security into the traditional technically led approach to ensure greater security from the start.", "The main focus of our project is to improve software security by introducing an integrated, inter-disciplinary methodology for software development. We will use the state-of-art and the state-of-practice knowledge from the Computer Science and Software Engineering domains, upon which we will build our methodology."],
-  "img":"img/cside.png",
-"link":"https://www.projectcside.nl/"},  
-  {"topic":"Mobile Security",
-  "description":["Work on Android security, focusing on analysis and detection of malicious apps, improving automated testing, and evaluating security analysis tools; also explainable AI methods applied to malware detection."],
-  "img":"https://via.placeholder.com/700x300"},
-  {"topic":"Explainable Malware Detection",
-  "description":["he deluge of malicious application samples requires adoption of automated, AI-based techniques to detect malware. However, for practitioners it is not enough that a sample is labelled as malicious: they need to understand the reasons behind this classification decision. In our group, we investigate how different Explainable AI (XAI) techniques fare when applied for (mobile) malware detection. We research domain-specific requirements that security analysts have concerning malware detection methods and compare different XAI techniques based on these requirements."],
-  "img":"https://via.placeholder.com/700x300"}
+[
+  {
+    "topic": "Threat Modelling",
+    "description": [
+      "Threat modelling is important for organizations to be able to understand the risks they face. Among other topics in this field, we do research on attack trees. Attack trees are a well-established method for modeling and analyzing potential attacks on a system or network. While attack trees have been extensively studied in academic research, it is unclear to what extent these theoretical models are used in practice, and if they are used, how they are applied and adapted to real-world scenarios. We aim to bridge this gap."
+    ],
+    "img": "https://ars.els-cdn.com/content/image/1-s2.0-S0167404819301774-gr1.jpg",
+    "type": "core"
+  },
+  {
+    "topic": "Mobile Security",
+    "description": [
+      "We research mobile malware detection mechanisms, and we are especially interested in applications of explainable AI (XAI) techniques in the mobile malware detection domain."
+    ],
+    "img": "https://source.android.com/docs/security/images/android-software-stack.png",
+    "type": "core"
+  },
+  {
+    "topic": "Secure Software Engineering",
+    "description": [
+      "We study secure software development processes to understand what actually leads to secure software systems. We apply quantitative and qualitative research methods to obtain robust insights that can help organizations to cost-effectively improve their secure software development processes and release systems that are more secure. "
+    ],
+    "img": "https://varutra-1a3b6.kxcdn.com/wp-content/uploads/2015/12/2.png",
+    "type": "core"
+  },
+  {
+    "topic": "Security Practices in Organizations",
+    "description": [
+      "We research different procedures, activities and mechanisms that organizations use to improve cyber security: risk management, security operation centers (SOCs), threat intelligence data, etc., and how these different security activities (should) inform each other. "
+    ],
+    "img": "https://d3i71xaburhd42.cloudfront.net/001f9cd412af2dc00f9835ae159443f78ba895d9/3-Figure1-1.png",
+    "type": "core"
+  },
+  {
+    "topic": "C-SIDE: Secure Software Development",
+    "description": [
+      "The goal of Project C-SIDE is the development of a design methodology for software development that integrates non-technical aspects of cyber security into the traditional technically led approach to ensure greater security from the start.",
+      "The main focus of our project is to improve software security by introducing an integrated, inter-disciplinary methodology for software development. We will use the state-of-art and the state-of-practice knowledge from the Computer Science and Software Engineering domains, upon which we will build our methodology."
+    ],
+    "img": "img/cside.png",
+    "link": "https://www.projectcside.nl/",
+    "type": "funded"
+  },
+  {
+    "topic": "NimbleAI",
+    "description": [
+      "Description of the project: Ultra-Energy Efficient and Secure Neuromorphic Sensing and Processing at the Endpoint (NimbleAI) is a HorizonEurope project with 19 partners from across the EU.  The project focuses on designing an integral neuromorphic sensing-processing solution to efficiently yet securely run computer vision algorithms in resource- and area-constrained chips destined to endpoint devices. "
+    ],
+    "img": "https://www.nimbleai.eu/wp-content/uploads/2022/11/nimbleAI_logo.png",
+    "link": "https://www.nimbleai.eu/",
+    "type": "funded"
+  }
 ]

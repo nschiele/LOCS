@@ -48,16 +48,17 @@
                 // If JSON data is successfully loaded and parsed, generate HTML to display it on the page
                 .done(function (data) {
                     // Create an empty string variable to store the generated HTML
-                    var h = ""
+
                     // Iterate over each item in the JSON data and generate HTML
                     for (var i in data) {
+                        var h = ""
                         // Generate HTML for the row
                         h += '<div class="row">'
                         // Generate HTML for the column with image
                         h += '<div class="col-md-5">'
                         h += '    <a href="'
-                        if(data[i].hasOwnProperty("link")){
-                            h+= data[i].link
+                        if (data[i].hasOwnProperty("link")) {
+                            h += data[i].link
                         } else {
                             h += "#"
                         }
@@ -78,9 +79,10 @@
                         h += '</div>'
                         // Add a horizontal line after each row
                         h += '<hr>'
+                        $("#research-" + data[i].type).append(h)
                     }
                     // Append the generated HTML to the element with id="research"
-                    $("#research").append(h)
+
                 });
         });
     </script>
@@ -108,7 +110,15 @@
             <small></small>
         </h1>
     </div>
-    <div class="container" id="research">
+
+    <div class="container" id="research-funded">
+        <h2>Funded projects:</h2>
+    </div>
+
+    <hr>
+
+    <div class="container" id="research-core">
+        <h2>Core research topics:</h2>
     </div>
     <!-- /.container -->
 
