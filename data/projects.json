@@ -125,5 +125,25 @@
         "description":"Develop an interface for a web application to build ADTs",
         "level":"b",
         "status":"i"
+    },
+    {
+        "title": "Zero-day hunting in Github projects",
+        "code": "github-zero-day-hunt",
+        "supervisor": [
+            "ja"
+        ],
+        "description": "We have a fast and new methodology to find zero-day vulnerabilities in public Github projects. With our guidance, you'll verify the existence of vulnerabilities and participate in submitting the CVEs and writing the papers. The methodology is almost ready but obvious reasons we don't publish the details here.",
+        "level": "b",
+        "status": "a"
+    },
+    {
+        "title": "Studying zero-day fixes in Github",
+        "code": "github-zero-day-study",
+        "supervisor": [
+            "ja"
+        ],
+        "description": "With a new methodology, you'll research on some nice results from studying zero-day fixes in Github. The methodology is almost ready but obvious reasons we don't publish the details here.",
+        "level": "b",
+        "status": "a"
     }
 ]
