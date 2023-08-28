@@ -45,6 +45,17 @@
         "status":"a"
     },
     {
+        "title": "ADT Web App User Study",
+        "code": "adt-user-study",
+        "supervisor": [
+            "nds"
+        ],
+        "description": "Design and run a user study on the usability of the previously built ADT Web App tool. Find what the strengths and weaknesses of the tool are in a scientific manner.",
+        "deliverable": "User study data",
+        "level": "b",
+        "status": "a"
+    },
+    {
         "title":"Automated ADT Format from Image",
         "code":"adt-from-image",
         "supervisor":["nds"],
@@ -63,22 +74,14 @@
         "status":"a"
     },
     {
-        "title":"ADT Javascript Visualization",
-        "code":"adt-javascript-visualization",
-        "supervisor":["nds"],
-        "description":"Write code that can take an ADT data format (xml/json) and generate ADT images from it. ADT visualization should make maximum use of available field, and be able to adjust node placement, node text size. There should be no overlapping elements in the visual field.",
-        "deliverable":"The code that can generate ADT images from specific data format.",
-        "level":"b",
-        "status":"a"
-    },
-    {
         "title":"ADT Python Library",
         "code":"adt-python-library",
         "supervisor":["nds"],
         "description":"Create a library that allows for the creation of ADTs in Python. This should include some kind of visualization, the ability to enter whole trees in standard format, and the ability to access/adjust/add onto nodes already within the ADT (needs to ability to traverse and access nodes in the Tree) ",
         "deliverable":"Python library that can generate ADTs",
+        "student": "bs-jh",
         "level":"b",
-        "status":"a"
+        "status": "i"
     },
     {
         "title":"Simple Text to ADT",
@@ -86,8 +89,11 @@
         "supervisor":["nds"],
         "student":"bs-sm",
         "description":"Develop a language with simple grammar that will allow especially non-technically inclined people to write instructions to create an ADT.",
+        "abstract": [
+            "Attack defense trees are commonly used in the field to represent attacker paths and defensive measures. However, existing tools like ADTool and Attack Tree have limitations, allowing for example the creation of invalid attack defense trees in the case of Attack Tree. To overcome this, ADTLang is introduced as a domain-specific language that generates valid attack defense tree descriptions. ADTLang provides strong validation and compatibility with ADTool. We also implemented a test suite to showcase the correctness and robustness of ADTLang. Each test case is used to ensure that the requirements of ADTLang are met. ADTLang provides a benefit to cybersecurity experts and students, by providing a language that can clearly and easily define semantically valid attack defense trees."
+        ],
         "level":"b",
-        "status":"i"
+        "status": "p"
     },
     {
         "title":"ADT JSON Format",
@@ -122,9 +128,10 @@
         "code":"adt-web-app-interface",
         "supervisor":["nds"],
         "student":"bs-mm",
+        "abstract": "The applications of the security modeling tool, attack-defense tree, are not extensively utilized. One of the underlying causes is the design flaws in the interface of these applications. This research studies how to provide a practical solution for this issue by using human-computer interaction principles. Consequently, both theoretical and practical considerations are covered to apply the principles on the interface of the attack-defense tree tool. The ultimate goal of this study is to build a user-friendly interface for a web application that allows users to create and customize attack-defense trees without the demand for technical knowledge. Therefore, the results provided are the final interfaces of the web application, followed by a usability-based evaluation. Finally, the project limitations are addressed along with future work ideas to optimize and complete the achieved results",
         "description":"Develop an interface for a web application to build ADTs",
         "level":"b",
-        "status":"i"
+        "status": "p"
     },
     {
         "title": "Zero-day hunting in Github projects",

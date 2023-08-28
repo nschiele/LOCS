@@ -182,11 +182,19 @@
         "order": 4
     },
     {
+        "init": "bs-jh",
+        "firstname": "Jayme",
+        "lastname": "Hebinck",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
         "init": "bs-sm",
         "firstname": "Stephan",
         "lastname": "Meza",
         "position": "BSc Student",
         "img": "img/blank.png",
+        "former": true,
         "order": 4
     },
     {
@@ -195,6 +203,7 @@
         "lastname": "Mohalaia",
         "position": "BSc Student",
         "linkedin": "marwa-m7",
+        "former": true,
         "order": 4
     },
     {
