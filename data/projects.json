@@ -52,7 +52,7 @@
         ],
         "description": "Design and run a user study on the usability of the previously built ADT Web App tool. Find what the strengths and weaknesses of the tool are in a scientific manner.",
         "deliverable": "User study data",
-        "level": "b",
+        "level": "m",
         "status": "a"
     },
     {
@@ -84,18 +84,6 @@
         "status": "i"
     },
     {
-        "title":"Simple Text to ADT",
-        "code":"text-to-adt",
-        "supervisor":["nds"],
-        "student":"bs-sm",
-        "description":"Develop a language with simple grammar that will allow especially non-technically inclined people to write instructions to create an ADT.",
-        "abstract": [
-            "Attack defense trees are commonly used in the field to represent attacker paths and defensive measures. However, existing tools like ADTool and Attack Tree have limitations, allowing for example the creation of invalid attack defense trees in the case of Attack Tree. To overcome this, ADTLang is introduced as a domain-specific language that generates valid attack defense tree descriptions. ADTLang provides strong validation and compatibility with ADTool. We also implemented a test suite to showcase the correctness and robustness of ADTLang. Each test case is used to ensure that the requirements of ADTLang are met. ADTLang provides a benefit to cybersecurity experts and students, by providing a language that can clearly and easily define semantically valid attack defense trees."
-        ],
-        "level":"b",
-        "status": "p"
-    },
-    {
         "title":"ADT JSON Format",
         "code":"adt-json-format",
         "supervisor":["nds"],
@@ -106,32 +94,12 @@
         "status":"i"
     },
     {
-        "title":"Analysis of exploit code published on GitHub",
-        "code":"exploit-code-github",
-        "supervisor":["sey"],
-        "student":"bs-rt",
-        "description":"",
-        "abstract":["GitHub is one of the most well-known and used platforms for software development and code sharing that, among other purposes, is being used by security experts to share proof-of-concept exploit code. These exploits are useful for pentesters to identify if a system they evaluate is vulnerable and contains known vulnerabilities (CVEs). However, recently it has been reported that some of these exploits are being weaponized, i.e., they attack the system on which the pentest is conducted.", "In this work we analyze the exploit landscape on GitHub over the last 5 years. We have proposed several heuristics to identify weaponized (malicious) exploits. Although we cannot detect all malicious exploits with these heuristics, our evaluation shows that weaponized exploits are widely distributed, and that the security community must be extra careful when reusing the proof-of-concept code from unknown sources."],
-        "level":"b",
-        "status":"p"
-    },
-    {
         "title":"Measuring non-technical practices during the software development process",
         "code":"measure-non-technical-practices",
         "supervisor":["ak"],
         "description":"In spite of all efforts to improve software security, vulnerabilities are still distributed in software. While producing secure software, there are problems with not only purely technical practices but also non-technical practices, such as organizational, behavioral, and governance aspects. People, who make decisions have less understanding of non-technical practices. In this project, you will explore which non-technical practices are involved in the secure software methodologies and the methods used to provide evidence of the effectiveness of these practices.",
         "level":"b",
         "status":"a"
-    },
-    {
-        "title":"ADT Web App Interface",
-        "code":"adt-web-app-interface",
-        "supervisor":["nds"],
-        "student":"bs-mm",
-        "abstract": "The applications of the security modeling tool, attack-defense tree, are not extensively utilized. One of the underlying causes is the design flaws in the interface of these applications. This research studies how to provide a practical solution for this issue by using human-computer interaction principles. Consequently, both theoretical and practical considerations are covered to apply the principles on the interface of the attack-defense tree tool. The ultimate goal of this study is to build a user-friendly interface for a web application that allows users to create and customize attack-defense trees without the demand for technical knowledge. Therefore, the results provided are the final interfaces of the web application, followed by a usability-based evaluation. Finally, the project limitations are addressed along with future work ideas to optimize and complete the achieved results",
-        "description":"Develop an interface for a web application to build ADTs",
-        "level":"b",
-        "status": "p"
     },
     {
         "title": "Zero-day hunting in Github projects",
@@ -152,5 +120,27 @@
         "description": "With a new methodology, you'll research on some nice results from studying zero-day fixes in Github. The methodology is almost ready but obvious reasons we don't publish the details here.",
         "level": "b",
         "status": "a"
+    },
+    {
+        "title": "Automated Dynamic Analysis of Python Exploit Proof-of-Concepts",
+        "code": "automated-python-pocs",
+        "supervisor": [
+            "sey"
+        ],
+        "student": "bs-dk",
+        "description": "",
+        "status": "i",
+        "level": "b"
+    },
+    {
+        "title": "A Machine Learning approach to detect Malicious Web servers based on Whois and DNS Information",
+        "code": "ml-approach-malicious-webservers",
+        "supervisor": [
+            "sey"
+        ],
+        "student": "bs-yy",
+        "description": "",
+        "status": "i",
+        "level": "b"
     }
 ]

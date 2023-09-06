@@ -4,7 +4,7 @@
         "title": "Dr.",
         "firstname": "Olga",
         "lastname": "Gadyatskaya",
-        "position": "Assistant Professor",
+        "position": "Associate Professor",
         "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/portraits/science/g/olga-gadyatskaya.jpg/olga-gadyatskaya.jpg/d200x250",
         "gscholar": "QD3DU0wAAAAJ",
         "linkedin": "olgagadyatskaya",
@@ -94,42 +94,6 @@
         "order": 2
     },
     {
-        "init": "gb",
-        "firstname": "Giorgos",
-        "lastname": "Bampilis",
-        "position": "PhD Candidate",
-        "linkedin": "giorgos-bampilis",
-        "lu_email": "g.bampilis",
-        "lu_page": "giorgos-bampilis",
-        "order": 2,
-        "former": true
-    },
-    {
-        "init": "ms-ms",
-        "firstname": "Max",
-        "lastname": "Staallekker",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-sg",
-        "firstname": "Stuart",
-        "lastname": "Gunput",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-yw",
-        "firstname": "Yun",
-        "lastname": "Wan",
-        "position": "MSc Student",
-        "img": "img/blank.png",
-        "former": true,
-        "order": 3
-    },
-    {
         "init": "ms-ya",
         "firstname": "Yu Ang",
         "lastname": "Yuan",
@@ -145,7 +109,7 @@
         "order": 3
     },
     {
-        "init": "ms-ca",
+        "init": "bs-ca",
         "firstname": "Cem",
         "lastname": "Ayerdem",
         "position": "BSc Student",
@@ -159,6 +123,13 @@
         "order": 3
     },
     {
+        "init": "ms-yt",
+        "firstname": "Yao",
+        "lastname": "Tang",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
         "init": "bs-dk",
         "firstname": "Daniel",
         "lastname": "Kuiper",
@@ -166,9 +137,16 @@
         "order": 4
     },
     {
-        "init": "bs-jo",
-        "firstname": "Jimmy",
-        "lastname": "Oei",
+        "init": "bs-fd",
+        "firstname": "Fenna",
+        "lastname": "Deutz",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-hh",
+        "firstname": "Hugo",
+        "lastname": "Hulsenbosch",
         "position": "BSc Student",
         "order": 4
     },
@@ -189,171 +167,11 @@
         "order": 4
     },
     {
-        "init": "bs-sm",
-        "firstname": "Stephan",
-        "lastname": "Meza",
-        "position": "BSc Student",
-        "img": "img/blank.png",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-mm",
-        "firstname": "Marwa",
-        "lastname": "Mohalaia",
-        "position": "BSc Student",
-        "linkedin": "marwa-m7",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-rt",
-        "firstname": "Robin",
-        "lastname": "The",
-        "position": "BSc Student",
-        "linkedin": "robin-the",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-os",
-        "firstname": "Oussama",
-        "lastname": "Soulimani",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-db",
-        "firstname": "Dennis",
-        "lastname": "Buurman",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-kh",
-        "firstname": "Kevin",
-        "lastname": "Hulsker",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-cs",
-        "firstname": "Corne",
-        "lastname": "Spek",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-ad",
-        "firstname": "Arian",
-        "lastname": "Doek",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-avds",
-        "firstname": "Arthur",
-        "tussenvoegsel": "van",
-        "lastname": "der Staaij",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "bs-lvdp",
-        "firstname": "Louise",
-        "tussenvoegsel": "van",
-        "lastname": "der Peet",
-        "position": "BSc Student",
-        "former": true,
-        "order": 4
-    },
-    {
-        "init": "ms-mbt",
-        "firstname": "Mounaim",
-        "tussenvoegsel": "Ben",
-        "lastname": "Touhami",
-        "position": "MSc Student",
-        "img": "img/blank.png",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-aw",
-        "firstname": "Alex",
-        "lastname": "Wee",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-fi",
-        "firstname": "Falih",
-        "lastname": "Ihsan",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-lv",
-        "firstname": "Levi",
-        "lastname": "Vos",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-ap",
-        "firstname": "Alicia",
-        "lastname": "Pang",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-ra",
-        "firstname": "Rafidah",
-        "lastname": "Ashari",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-jwp",
-        "firstname": "Jan-Willem",
-        "lastname": "Phylipsen",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-al",
-        "firstname": "Anne",
-        "lastname": "Liebens",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
-        "init": "ms-je",
-        "firstname": "Jari",
-        "lastname": "Egberts",
-        "position": "MSc Student",
-        "former": true,
-        "order": 3
-    },
-    {
         "init": "ms-tvdv",
         "firstname": "Tim",
         "tussenvoegsel": "van de",
         "lastname": "Ven",
         "position": "MSc Student",
-        "former": false,
         "order": 3
     },
     {
@@ -361,7 +179,6 @@
         "firstname": "Joana",
         "lastname": "Trashlieva",
         "position": "MSc Student",
-        "former": false,
         "order": 3
     },
     {
@@ -369,7 +186,13 @@
         "firstname": "Shihang",
         "lastname": "Yu",
         "position": "MSc Student",
-        "former": false,
         "order": 3
+    },
+    {
+        "init": "bs-yy",
+        "firstname": "Yu Ang",
+        "lastname": "Yuan",
+        "position": "BSc Student",
+        "order": 4
     }
 ]

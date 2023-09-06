@@ -68,7 +68,7 @@
 
             return array;
         }
-        function addPerson(person) {
+                            function addPerson(person, former = false) {
             html = ""
             html += "<div class='col-md-8 col-sm-12'>"
             html += "<div class='row mt-2'>"
@@ -139,7 +139,13 @@
             html += '</div>'
             html += '</div>'
             html += "<div class='col-md-4 d-none d-sm-none d-lg-block'>"
-            html += '<img src="' + person.img + '" style="object-fit: cover;    overflow: hidden; width: 100%">'
+                            html += '<img src="'
+                            if (person.hasOwnProperty("img")) {
+                                html += person.img
+                            } else {
+                                html += "img/blank.png"
+                            }
+                            html += '" style="object-fit: cover;    overflow: hidden; width: 100%">'
             html += '</div>'
 
 
@@ -148,13 +154,20 @@
         }
 
         var people = []
+                $.getJSON('data/people-past.json', function (data) { }).done(function (data) {
+                    for (var i in data) {
+                        people.push(data[i])
+                    }
+                });
         $.getJSON('data/people.json', function (data) {
             console.log(data)
             console.log("loaded json")
             console.log(people)
         })
             .done(function (data) {
-                people = data
+                for (var i in data) {
+                    people.push(data[i])
+                }
                 hierarchy = { 0: [], 1: [], 2: [], 3: [], 4: [] }
                 var person = {}
                 var pageID = getParameterByName('id')

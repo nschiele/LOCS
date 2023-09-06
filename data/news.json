@@ -94,5 +94,25 @@
         "description": [
             "Arina Kudriavtseva speaks about her research at ICT Open 2023 and the 2023 INTERSCT Conference"
         ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2023,
+        "month": 8,
+        "day": 14,
+        "subtitle": "Rui Li presents her research at the NSS conference",
+        "description": [
+            "Rui Li presents her research at the NSS conference in Canterbury, the UK"
+        ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2023,
+        "month": 10,
+        "day": 4,
+        "subtitle": "C-SIDe project at the ONE conference",
+        "description": [
+            "The C-SIDe project team shares security insights at the ONE conference"
+        ]
     }
 ]

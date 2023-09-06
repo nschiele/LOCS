@@ -44,6 +44,20 @@
     "publisher": "Springer International Publishing",
     "pdf": "https://arxiv.org/abs/2110.02553.pdf",
     "doi":"https://doi.org/10.1007/978-3-031-02067-4_5"
+  },
+  {
+    "id": "5",
+    "title": "Evaluating Rule-Based Global XAI Malware Detection Methods",
+    "author": "Li and Gadyatskaya",
+    "author-codes": [
+      "rl",
+      "og"
+    ],
+    "year": "2023",
+    "type": "conf",
+    "journal": "In International Conference on Network and System Security",
+    "publisher": "Springer International Publishing",
+    "doi": "https://doi.org/10.1007/978-3-031-39828-5_1"
   }
 
 ]

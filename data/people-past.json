@@ -1,0 +1,188 @@
+[
+    {
+        "init": "gb",
+        "firstname": "Giorgos",
+        "lastname": "Bampilis",
+        "position": "PhD Candidate",
+        "linkedin": "giorgos-bampilis",
+        "lu_email": "g.bampilis",
+        "lu_page": "giorgos-bampilis",
+        "order": 2
+    },
+    {
+        "init": "ms-ms",
+        "firstname": "Max",
+        "lastname": "Staallekker",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-sg",
+        "firstname": "Stuart",
+        "lastname": "Gunput",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-yw",
+        "firstname": "Yun",
+        "lastname": "Wan",
+        "position": "MSc Student",
+        "img": "img/blank.png",
+        "order": 3
+    },
+    {
+        "init": "ms-fs",
+        "firstname": "Feiyang",
+        "lastname": "Sun",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "bs-jo",
+        "firstname": "Jimmy",
+        "lastname": "Oei",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-sm",
+        "firstname": "Stephan",
+        "lastname": "Meza",
+        "position": "BSc Student",
+        "img": "img/blank.png",
+        "order": 4
+    },
+    {
+        "init": "bs-mm",
+        "firstname": "Marwa",
+        "lastname": "Mohalaia",
+        "position": "BSc Student",
+        "linkedin": "marwa-m7",
+        "order": 4
+    },
+    {
+        "init": "bs-rt",
+        "firstname": "Robin",
+        "lastname": "The",
+        "position": "BSc Student",
+        "linkedin": "robin-the",
+        "order": 4
+    },
+    {
+        "init": "bs-os",
+        "firstname": "Oussama",
+        "lastname": "Soulimani",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-db",
+        "firstname": "Dennis",
+        "lastname": "Buurman",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-kh",
+        "firstname": "Kevin",
+        "lastname": "Hulsker",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-cs",
+        "firstname": "Corne",
+        "lastname": "Spek",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-ad",
+        "firstname": "Arian",
+        "lastname": "Doek",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-avds",
+        "firstname": "Arthur",
+        "tussenvoegsel": "van",
+        "lastname": "der Staaij",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "bs-lvdp",
+        "firstname": "Louise",
+        "tussenvoegsel": "van",
+        "lastname": "der Peet",
+        "position": "BSc Student",
+        "order": 4
+    },
+    {
+        "init": "ms-mbt",
+        "firstname": "Mounaim",
+        "tussenvoegsel": "Ben",
+        "lastname": "Touhami",
+        "position": "MSc Student",
+        "img": "img/blank.png",
+        "order": 3
+    },
+    {
+        "init": "ms-aw",
+        "firstname": "Alex",
+        "lastname": "Wee",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-fi",
+        "firstname": "Falih",
+        "lastname": "Ihsan",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-lv",
+        "firstname": "Levi",
+        "lastname": "Vos",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-ap",
+        "firstname": "Alicia",
+        "lastname": "Pang",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-ra",
+        "firstname": "Rafidah",
+        "lastname": "Ashari",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-jwp",
+        "firstname": "Jan-Willem",
+        "lastname": "Phylipsen",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-al",
+        "firstname": "Anne",
+        "lastname": "Liebens",
+        "position": "MSc Student",
+        "order": 3
+    },
+    {
+        "init": "ms-je",
+        "firstname": "Jari",
+        "lastname": "Egberts",
+        "position": "MSc Student",
+        "order": 3
+    }
+]

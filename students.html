@@ -28,13 +28,15 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="people.js"></script>
     <script>
-        function displayProject(project, sup, student) {
+                                                function displayProject(project, sup, student, past = false) {
             var html = ""
             html += "<tr class='main main_" + project.code + "'>"
             html += " <th scope='row'>" + project.title + "</th>"
-            if (project.status == "i" || project.status == "p") {
+                                                if ((project.status == "i" || project.status == "p") || past) {
                 html += "<td>"
-                html += "<a href='person.html?id=" + student.init + "'>" + formatName(student) + "</a>"
+                                                if ((typeof student !== 'undefined')) {
+                                                html += "<a href='person.html?id=" + student.init + "'>" + formatName(student) + "</a>"
+                                                } 
                 html += "</td>"
             }
             html += "<td>"
@@ -48,14 +50,14 @@
                 html += "<td colspan='3'>"
             }
             html += "<div class='pl-5' style='margin-left:10px'>"
-            if (project.status != "p" || !project.hasOwnProperty("abstract")) {
+                                                if (!past) {
                 html += "<p> <b>Description:  </b>" + project.description + "</p>"
                 if (project.hasOwnProperty("deliverable") && project.status == "a") {
                     html += "<p> <b>Deliverable:  </b>" + project.deliverable + "</p>"
                 }
             } else {
                 html += "<p> <b>Abstract: </b></p>"
-                for(i in project.abstract){
+                                                for (i in project.abstract) {
                     html += "<p>" + project.abstract[i] + "</p>"
                 }
             }
@@ -66,16 +68,32 @@
         }
 
         $(document).ready(function () {
+            var dict = { "ms-av": [], "bs-av": [], "ms-ip": [], "bs-ip": [], "ms-past": [], "bs-past": [] }
             var people;
             $.getJSON('data/people.json', function (data) {
-                people = data
+                people = data;
+                console.log(people)
             })
-            $.getJSON('data/projects.json', function (projects) {
-                // console.log(projects)
-            }).done(function (projects) {
+            $.getJSON('data/people-past.json', function (data) {
+                for (var i in data) {
+                    people.push(data[i])
+                }
+            })
+            $.getJSON('data/projects-past.json', function (projects) { }).done(function (pastprojects) {
+                for (var i in pastprojects) {
+                    if (pastprojects[i].level == "m") {
+                        dict["ms-past"].push(pastprojects[i])
+
+                    } else if (pastprojects[i].level == "b") {
+                        dict["bs-past"].push(pastprojects[i])
+                    }
+
+                }
+            })
+            $.getJSON('data/projects.json', function (projects) { }).done(function (projects) {
                 html = ""
                 // Dictionary sorts projects into available, in progress and previous
-                var dict = { "ms-av": [], "bs-av": [], "ms-ip": [], "bs-ip": [], "ms-past": [], "bs-past": [] }
+
                 for (var i in projects) {
                     // console.log(projects[i].level)
                     if (projects[i].level == "m") {
@@ -83,17 +101,13 @@
                             dict["ms-av"].push(projects[i])
                         } else if (projects[i].status == "i") {
                             dict["ms-ip"].push(projects[i])
-                        } else if (projects[i].status == "p") {
-                            dict["ms-past"].push(projects[i])
-                        }
+                        } 
                     } else if (projects[i].level == "b") {
                         if (projects[i].status == "a") {
                             dict["bs-av"].push(projects[i])
                         } else if (projects[i].status == "i") {
                             dict["bs-ip"].push(projects[i])
-                        } else if (projects[i].status == "p") {
-                            dict["bs-past"].push(projects[i])
-                        }
+                        } 
                     }
                 }
                 // console.log(dict)
@@ -170,7 +184,7 @@
                     var sup = codeToPerson(people, dict["ms-past"][i].supervisor[0])
                     var student = codeToPerson(people, dict["ms-past"][i].student)
                     console.log(student)
-                    html += displayProject(dict["ms-past"][i], sup, student)
+                    html += displayProject(dict["ms-past"][i], sup, student, true)
                 }
                 if (html.length > 0) {
                     html = '<table class="table table-hover"> <thead> <tr> <th class="w-55" scope="col">Title</th><th class="w-25" scope="col">Student</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + html
@@ -181,10 +195,11 @@
                 }
                 bhtml = ""
                 for (i in dict["bs-past"]) {
+                    console.log(dict["bs-past"])
                     var sup = codeToPerson(people, dict["bs-past"][i].supervisor[0])
                     var student = codeToPerson(people, dict["bs-past"][i].student)
                     console.log(student)
-                    bhtml += displayProject(dict["bs-past"][i], sup, student)
+                    bhtml += displayProject(dict["bs-past"][i], sup, student, true)
                 }
                 if (bhtml.length > 0) {
                     bhtml = '<table class="table table-hover"> <thead> <tr> <th class="w-50" scope="col">Title</th><th class="w-25" scope="col">Student</th><th class="w-25" scope="col">Supervisor</th> </tr> </thead> <tbody>' + bhtml
@@ -205,7 +220,7 @@
 
         $(document).on('click', '.main', function (data) {
             $(".main").removeClass("stay")
-            $("."+data.currentTarget.classList[1]).addClass("stay")
+            $("." + data.currentTarget.classList[1]).addClass("stay")
             $(".rev").css("display", "none")
             console.log("rev_" + data.currentTarget.classList[1].split("_")[1])
             $(".rev.rev_" + data.currentTarget.classList[1].split("_")[1]).css("display", "table-row")
@@ -251,7 +266,8 @@
     <div class="container" id="courses">
         <div class="row">
             <p>
-                We are always looking for motivated students. Students are encouraged to directly contact group members about projects (either listed here or a project of their own design).
+                We are always looking for motivated students. Students are encouraged to directly contact group members
+                about projects (either listed here or a project of their own design).
             </p>
         </div>
         <div class="row">
