@@ -94,7 +94,7 @@
         "order": 2
     },
     {
-        "init": "ms-ya",
+        "init": "ms-yy",
         "firstname": "Yu Ang",
         "lastname": "Yuan",
         "position": "MSc Student",
@@ -114,13 +114,6 @@
         "lastname": "Ayerdem",
         "position": "BSc Student",
         "order": 4
-    },
-    {
-        "init": "ms-fs",
-        "firstname": "Feiyang",
-        "lastname": "Sun",
-        "position": "MSc Student",
-        "order": 3
     },
     {
         "init": "ms-yt",
@@ -187,12 +180,5 @@
         "lastname": "Yu",
         "position": "MSc Student",
         "order": 3
-    },
-    {
-        "init": "bs-yy",
-        "firstname": "Yu Ang",
-        "lastname": "Yuan",
-        "position": "BSc Student",
-        "order": 4
     }
 ]

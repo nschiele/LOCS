@@ -184,5 +184,12 @@
         "lastname": "Egberts",
         "position": "MSc Student",
         "order": 3
+    },
+    {
+        "init": "ms-fs",
+        "firstname": "Feiyang",
+        "lastname": "Sun",
+        "position": "MSc Student",
+        "order": 3
     }
 ]
