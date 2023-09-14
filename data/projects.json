@@ -141,6 +141,17 @@
         "student": "ms-yy",
         "description": "",
         "status": "i",
+        "level": "m"
+    },
+    {
+        "title": "Establishing a means to collect, store, and query ADT information from a web application",
+        "code": "adt-web-app-backend-server",
+        "supervisor": [
+            "nds"
+        ],
+        "student": "bs-fd",
+        "description": "",
+        "status": "i",
         "level": "b"
     }
 ]
