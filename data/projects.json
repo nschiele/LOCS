@@ -133,6 +133,17 @@
         "level": "b"
     },
     {
+        "title": "Establishing a means to collect, store, and query ADT information from a web application",
+        "code": "adt-webapp-backend-server",
+        "supervisor": [
+            "nds"
+        ],
+        "student": "bs-fd",
+        "description": "",
+        "status": "i",
+        "level": "b"
+    },
+    {
         "title": "A Machine Learning approach to detect Malicious Web servers based on Whois and DNS Information",
         "code": "ml-approach-malicious-webservers",
         "supervisor": [
@@ -142,16 +153,5 @@
         "description": "",
         "status": "i",
         "level": "m"
-    },
-    {
-        "title": "Establishing a means to collect, store, and query ADT information from a web application",
-        "code": "adt-web-app-backend-server",
-        "supervisor": [
-            "nds"
-        ],
-        "student": "bs-fd",
-        "description": "",
-        "status": "i",
-        "level": "b"
     }
 ]
