@@ -93,6 +93,16 @@
         "img": "img/people/jafar.jpg",
         "order": 2
     },
+        {
+        "init": "ss",
+        "firstname": "Shuang",
+        "lastname": "Sun",
+        "position": "PhD Candidate",
+        "lu_email": "s.sun",
+        "lu_page": "shuang-sun",
+        "img": "img/blank.png",
+        "order": 2
+    },
     {
         "init": "ms-yy",
         "firstname": "Yu Ang",
