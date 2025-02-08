@@ -50,7 +50,7 @@
         "firstname": "Rui",
         "lastname": "Li",
         "position": "PhD Candidate",
-        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/rui-li.jpeg/rui-li.jpeg/d200x250",
+        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/rui-li.jpg",
         "linkedin": "rui-li-3625b4231",
         "lu_email": "r.li",
         "lu_page": "rui-li",
@@ -74,7 +74,7 @@
         "firstname": "Arina",
         "lastname": "Kudriavtseva",
         "position": "PhD Candidate",
-        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/liacs/arina-kudriavtseva.jpg/arina-kudriavtseva.jpg/d200x250",
+        "img": "https://www.universiteitleiden.nl/binaries/content/gallery/ul2/main-images/science/profielfotos/arina-kudriavtseva.jpg",
         "gscholar": "MUZ3Qq0AAAAJ",
         "linkedin": "arina-kudriavtseva-7aaa37217",
         "lu_email": "a.kudriavtseva",
@@ -104,11 +104,11 @@
         "order": 2
     },
     {
-        "init": "ms-yy",
-        "firstname": "Yu Ang",
-        "lastname": "Yuan",
+        "init": "bs-rt",
+        "firstname": "Robin",
+        "lastname": "The",
         "position": "MSc Student",
-        "img": "img/blank.png",
+        "linkedin": "robin-the",
         "order": 3
     },
     {
@@ -133,23 +133,9 @@
         "order": 3
     },
     {
-        "init": "bs-dk",
-        "firstname": "Daniel",
-        "lastname": "Kuiper",
-        "position": "BSc Student",
-        "order": 4
-    },
-    {
         "init": "bs-fd",
         "firstname": "Fenna",
         "lastname": "Deutz",
-        "position": "BSc Student",
-        "order": 4
-    },
-    {
-        "init": "bs-hh",
-        "firstname": "Hugo",
-        "lastname": "Hulsenbosch",
         "position": "BSc Student",
         "order": 4
     },
@@ -174,13 +160,6 @@
         "firstname": "Tim",
         "tussenvoegsel": "van de",
         "lastname": "Ven",
-        "position": "MSc Student",
-        "order": 3
-    },
-    {
-        "init": "ms-jt",
-        "firstname": "Joana",
-        "lastname": "Trashlieva",
         "position": "MSc Student",
         "order": 3
     },

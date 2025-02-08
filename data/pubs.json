@@ -58,6 +58,18 @@
     "journal": "In International Conference on Network and System Security",
     "publisher": "Springer International Publishing",
     "doi": "https://doi.org/10.1007/978-3-031-39828-5_1"
+  },
+  {
+    "id": "6",
+    "title": "The File That Contained the Keys Has Been Removed: An Empirical Analysis of Secret Leaks in Cloud Buckets and Responsible Disclosure Outcomes",
+    "author": "Yadmani, Gadyatskaya, Zhauniarovich",
+    "author-codes": [
+      "rl",
+      "og"
+    ],
+    "year": "2025",
+    "type": "conf",
+    "journal": "In IEEE Symposium on Security and Privacy (SP)",
+    "doi": "https://doi.org/10.1109/SP61157.2025.00009"
   }
-
 ]

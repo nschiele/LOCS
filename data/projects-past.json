@@ -50,5 +50,35 @@
         "abstract": [],
         "description": "",
         "level": "b"
+    },
+    {
+        "title": "A Machine Learning approach to detect Malicious Web servers based on Whois and DNS Information",
+        "code": "ml-approach-malicious-webservers",
+        "supervisor": [
+            "sey"
+        ],
+        "student": "ms-yy",
+        "description": "",
+        "level": "m"
+    },
+    {
+        "title": "Automated Dynamic Analysis of Python Exploit Proof-of-Concepts",
+        "code": "automated-python-pocs",
+        "supervisor": [
+            "sey"
+        ],
+        "student": "bs-dk",
+        "description": "",
+        "level": "b"
+    },
+    {
+        "title": "An Exploration of C2 Server Fingerprinting Capabilities with Probed HTTP Data",
+        "code": "c2-detection",
+        "supervisor": [
+            "sey"
+        ],
+        "student": "bs-hh",
+        "description": "",
+        "level": "b"
     }
 ]

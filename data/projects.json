@@ -122,17 +122,6 @@
         "status": "a"
     },
     {
-        "title": "Automated Dynamic Analysis of Python Exploit Proof-of-Concepts",
-        "code": "automated-python-pocs",
-        "supervisor": [
-            "sey"
-        ],
-        "student": "bs-dk",
-        "description": "",
-        "status": "i",
-        "level": "b"
-    },
-    {
         "title": "Establishing a means to collect, store, and query ADT information from a web application",
         "code": "adt-webapp-backend-server",
         "supervisor": [
@@ -142,16 +131,5 @@
         "description": "",
         "status": "i",
         "level": "b"
-    },
-    {
-        "title": "A Machine Learning approach to detect Malicious Web servers based on Whois and DNS Information",
-        "code": "ml-approach-malicious-webservers",
-        "supervisor": [
-            "sey"
-        ],
-        "student": "ms-yy",
-        "description": "",
-        "status": "i",
-        "level": "m"
     }
 ]
