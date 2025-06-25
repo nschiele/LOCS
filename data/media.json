@@ -1,4 +1,12 @@
 [
+    {"title": "AI kept 15-year-old zombie vuln alive, but its time is drawing near",
+     "description":"Researchers have come up with a fix for a path traversal bug first spotted in 2010",
+     "link_title":"Read more",
+     "link":"https://www.theregister.com/2025/06/05/llm_kept_persistent_path_traversal_bug_alive/",
+     "year":2025,
+     "month":6,
+     "day":5},
+
     {"title": "Socks5Systemz Botnet Powers Illegal Proxy Service with 85,000+ Hacked Devices",
     "link":"https://thehackernews.com/2024/12/socks5systemz-botnet-powers-illegal.html",
     "year":2024,

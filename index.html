@@ -31,6 +31,8 @@
 
 
         $(document).ready(function () {
+            // Disable json cache
+            $.ajaxSetup({ cache: false });
 
             function addNews(item) {
                 var monthMap = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]

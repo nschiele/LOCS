@@ -71,6 +71,9 @@
         }
 
         $(document).ready(function () {
+            // Disable json cache
+            $.ajaxSetup({ cache: false });
+
             $.getJSON('data/media.json', function (data) {
                 medlist = data
                 console.log(data)

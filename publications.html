@@ -39,6 +39,11 @@
 
         var publist = []
         $(document).ready(function () {
+
+        // Disable json cache
+        $.ajaxSetup({ cache: false });
+
+
         $.getJSON('data/pubs.json', function (data) {
             publist = data
             console.log(data)

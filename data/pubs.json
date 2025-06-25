@@ -61,6 +61,19 @@
   },
   {
     "id": "6",
+    "title": "MoreFixes: A large-scale dataset of CVE fix commits mined through enhanced repository discovery",
+    "author": "Akhoundali, Nouri, Rietveld, Gadyatskaya",
+    "author-codes": [
+      "ja",
+      "og"
+    ],
+    "year": "2024",
+    "type": "conf",
+    "journal": "In Proceedings of the 20th International Conference on Predictive Models and Data Analytics in Software Engineering",
+    "doi": "https://dl.acm.org/doi/10.1145/3663533.3664036"
+  },
+  {
+    "id": "7",
     "title": "The File That Contained the Keys Has Been Removed: An Empirical Analysis of Secret Leaks in Cloud Buckets and Responsible Disclosure Outcomes",
     "author": "Yadmani, Gadyatskaya, Zhauniarovich",
     "author-codes": [
@@ -71,5 +84,44 @@
     "type": "conf",
     "journal": "In IEEE Symposium on Security and Privacy (SP)",
     "doi": "https://doi.org/10.1109/SP61157.2025.00009"
+  },
+  {
+    "id": "8",
+    "title": "Eradicating the Unseen: Detecting, Exploiting, and Remediating a Path Traversal Vulnerability across GitHub",
+    "author": "Akhoundali, Hamidi, Rietveld, Gadyatskaya",
+    "author-codes": [
+      "ja",
+      "og"
+    ],
+    "year": "2025",
+    "type": "conf",
+    "journal": "In AsiaCCS",
+    "doi": "TBD"
+  },
+  {
+    "id": "9",
+    "title": "My Code Is Less Secure with Gen AI: Surveying Developers' Perceptions of the Impact of Code Generation Tools on Security",
+    "author": "Kudriavtseva, Hotak, Gadyatskaya",
+    "author-codes": [
+      "ar",
+      "og"
+    ],
+    "year": "2025",
+    "type": "conf",
+    "journal": "In Proceedings of the 40th ACM/SIGAPP Symposium on Applied Computing (SAC '25)",
+    "doi": "https://doi.org/10.1145/3672608.3707778"
+  },
+  {
+    "id": "10",
+    "title": "You cannot improve what you do not measure: A triangulation study of software security metrics",
+    "author": "Kudriavtseva, Ahmad Hotak, Gadyatskaya",
+    "author-codes": [
+      "ar",
+      "og"
+    ],
+    "year": "2024",
+    "type": "conf",
+    "journal": "In Proceedings of the 39th ACM/SIGAPP Symposium on Applied Computing (SAC '24)",
+    "doi": "https://doi.org/10.1145/3605098.3635892"
   }
 ]

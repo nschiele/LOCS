@@ -114,5 +114,25 @@
         "description": [
             "The C-SIDe project team shares security insights at the ONE conference"
         ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2024,
+        "month": 10,
+        "day": 1,
+        "subtitle": "Secure software: New guidelines beyond technology",
+        "description": [
+            "LOCS researchers talk about “Secure software: New guidelines beyond technology” at ONE conference"
+        ]
+    },
+    {
+        "title": "News",
+        "year": 2025,
+        "month": 6,
+        "day": 5,
+        "subtitle": "AI kept 15-year-old zombie vuln alive, but its time is drawing near",
+        "description": [
+            "LOCS researchers have come up with a fix for a path traversal bug first spotted in 2010"
+        ]
     }
 ]

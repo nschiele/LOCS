@@ -41,6 +41,9 @@
     <!--This script is used to load JSON data from research.json file and display it on the page. -->
     <script>
         $(document).ready(function () {
+            // Disable json cache
+            $.ajaxSetup({ cache: false });
+
             // Get the JSON data from research.json file
             $.getJSON('data/research.json', function (data) {
                 console.log(data)
