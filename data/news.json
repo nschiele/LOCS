@@ -126,6 +126,16 @@
         ]
     },
     {
+        "title": "Presentation",
+        "year": 2025,
+        "month": 5,
+        "day": 14,
+        "subtitle": "The File That Contained the Keys Has Been Removed: An Empirical Analysis of\nSecret Leaks in Cloud Buckets and Responsible Disclosure Outcomes",
+        "description": [
+            "LOCS researchers explored the issue of secret leaks in files exposed through misconfigured cloud storage, presented at the IEEE Symposium on Security and Privacy"
+        ]
+    },
+    {
         "title": "News",
         "year": 2025,
         "month": 6,
@@ -133,6 +143,26 @@
         "subtitle": "AI kept 15-year-old zombie vuln alive, but its time is drawing near",
         "description": [
             "LOCS researchers have come up with a fix for a path traversal bug first spotted in 2010"
+        ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2024,
+        "month": 7,
+        "day": 10,
+        "subtitle": "MoreFixes: A large-scale dataset of CVE fix commits mined through enhanced repository discovery",
+        "description": [
+            "LOCS researchers presents largest CVE fix commit dataset at Promise conference"
+        ]
+    },
+    {
+        "title": "Presentation",
+        "year": 2025,
+        "month": 7,
+        "day": 10,
+        "subtitle": "A limited technical background is sufficient for attack-defense tree acceptability",
+        "description": [
+            "Researchers from LOCS presented at USENIX"
         ]
     }
 ]

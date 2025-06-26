@@ -134,7 +134,7 @@
         var people = []
         $(document).ready(function () {
             // Loads the current staff
-            $.getJSON('data/people.json').done(function (people) {
+            $.getJSON('data/people.json?_='+ new Date().getTime()).done(function (people) {
                 var hierarchy = { 0: [], 1: [], 2: [], 3: [], 4: [] }
 
                 //This part loads and sorts the current staff
@@ -165,7 +165,6 @@
                 for (let i = 0; i < 5; i++) {
                     if (past_hierarchy.hasOwnProperty(i)) {
                         for (var j in past_hierarchy[i]) {
-                            console.log(j)
                             addPerson(past_hierarchy[i][j], "#past-staff", true)
                         }
                     }

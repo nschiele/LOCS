@@ -123,5 +123,18 @@
     "type": "conf",
     "journal": "In Proceedings of the 39th ACM/SIGAPP Symposium on Applied Computing (SAC '24)",
     "doi": "https://doi.org/10.1145/3605098.3635892"
+  },
+  {
+    "id": "11",
+    "title": "A limited technical background is sufficient for attack-defense tree acceptability",
+    "author": "Schiele and Gadyatskaya",
+    "author-codes": [
+      "nds",
+      "og"
+    ],
+    "year": "2025",
+    "type": "conf",
+    "journal": "In USENIX Security Symposium",
+    "doi": "https://www.usenix.org/conference/usenixsecurity25/presentation/schiele"
   }
 ]
