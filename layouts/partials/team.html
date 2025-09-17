@@ -1,0 +1,322 @@
+{{ define "team" }}
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const profilePics = document.querySelectorAll(".profile-pic[data-sprite='true']");
+        console.log("Found sprite elements:", profilePics.length);
+        
+        // If no sprite elements found, don't initialize sprite tracking
+        if (profilePics.length === 0) {
+            console.log("No sprite elements found, skipping sprite initialization");
+            return;
+        }
+
+        // Check if device is mobile
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        
+        // On mobile devices, set all sprites to center position (front-facing) and exit
+        if (isMobile) {
+            console.log("Mobile device detected, setting all sprites to center position");
+            profilePics.forEach((pic) => {
+                pic.style.backgroundPosition = "100% 100%"; // Center/front-facing position
+            });
+            return;
+        }
+        
+        // Define the position mapping based on your 3x3 sprite grid:
+        // Grid layout: [top][top-right][right]
+        //              [right-bottom][down][right-bottom] 
+        //              [left][left-top][straight]
+        const spritePositions = {
+            //      X   Y
+            "top": "0% 0%",           // Cursor above -> use top-left sprite (person looking top)
+            "top-right": "50% 0%",    // Cursor top-right -> use top-middle sprite (person looking top-right)
+            "right": "100% 0%",       // Cursor right -> use top-right sprite (person looking right)
+            "bottom-right": "0% 50%", // Cursor bottom-right -> use middle-left sprite (person looking right-bottom)
+            "bottom": "50% 50%",      // Cursor below -> use middle-middle sprite (person looking down)
+            "bottom-left": "100% 50%", // Cursor bottom-left -> use bottom-left sprite (person looking left)
+            "left": "0% 100%",        // Cursor left -> use bottom-left sprite (person looking left)
+            "top-left": "50% 100%",   // Cursor top-left -> use bottom-middle sprite (person looking left-top)
+            "center": "100% 100%"     // Default/center -> use bottom-right sprite (person looking straight)
+        };
+
+        // Removed debug element for production
+
+        // Throttle the mousemove event to reduce CPU usage
+        let lastExecution = 0;
+        const throttleDelay = 50; // milliseconds
+
+        document.addEventListener("mousemove", function (event) {
+            const now = Date.now();
+            if (now - lastExecution < throttleDelay) return;
+            lastExecution = now;
+
+            const { clientX, clientY } = event;
+
+            // Use requestAnimationFrame for smoother transitions
+            requestAnimationFrame(() => {
+                profilePics.forEach((pic, index) => {
+                    const rect = pic.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const dx = clientX - centerX;
+                    const dy = clientY - centerY;
+
+                    const threshold = 50; // Sensitivity threshold
+
+                    // Default to center
+                    let direction = "center";
+                    
+                    // Determine direction based on angle
+                    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Only change direction if mouse is far enough away
+                    if (distance > threshold) {
+                        // Convert angle to 8 directions based on cursor position
+                        // The person should look toward where the cursor is
+                        // 0° = right, 90° = bottom, 180°/-180° = left, -90° = top
+                        if (angle >= -22.5 && angle < 22.5) {
+                            direction = "right";           // Cursor to the right
+                        } else if (angle >= 22.5 && angle < 67.5) {
+                            direction = "bottom-right";    // Cursor bottom-right
+                        } else if (angle >= 67.5 && angle < 112.5) {
+                            direction = "bottom";          // Cursor below
+                        } else if (angle >= 112.5 && angle < 157.5) {
+                            direction = "bottom-left";     // Cursor bottom-left
+                        } else if (angle >= 157.5 || angle < -157.5) {
+                            direction = "left";            // Cursor to the left
+                        } else if (angle >= -157.5 && angle < -112.5) {
+                            direction = "top-left";        // Cursor top-left
+                        } else if (angle >= -112.5 && angle < -67.5) {
+                            direction = "top";             // Cursor above
+                        } else if (angle >= -67.5 && angle < -22.5) {
+                            direction = "top-right";       // Cursor top-right
+                        }
+                    }
+
+                    // Only update if direction has changed
+                    if (pic.currentDirection !== direction) {
+                        pic.style.backgroundPosition = spritePositions[direction];
+                        pic.currentDirection = direction;
+                    }
+                });
+            });
+        });
+    });
+
+</script>
+
+
+<style>
+    /* Team grid layout */
+    .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 0 -8px;
+    }
+
+    /* Team card layout */
+    .team-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 22%;
+        min-width: 250px;
+        max-width: 300px;
+        margin-bottom: 16px;
+    }
+
+    /* Box content layout */
+    .box-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px;
+    }
+
+    /* Profile picture styling for sprite images */
+    .profile-pic {
+        width: 100%;
+        min-height: 300px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 315%;  /* Exactly 300% for 3x3 grid to show one frame at a time */
+        will-change: background-position;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    /* For non-sprite images */
+    .profile-pic.single-image {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* Social icons styling */
+    .social-icons {
+        filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(180deg) brightness(95%) contrast(80%);
+        min-height: 24px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .team-grid {
+            gap: 12px;
+            margin: 0 -4px;
+        }
+        
+        .team-card {
+            flex: 1 1 45%;
+            min-width: 200px;
+            max-width: none;
+        }
+        
+        .profile-pic {
+            min-height: 250px;
+        }
+        
+        .box-content {
+            padding: 12px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .team-card {
+            flex: 1 1 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .profile-pic {
+            min-height: 280px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .team-grid {
+            gap: 8px;
+            margin: 0;
+        }
+        
+        .team-card {
+            flex: 1 1 100%;
+            min-width: unset;
+        }
+        
+        .profile-pic {
+            min-height: 250px;
+        }
+        
+        .box-content {
+            padding: 16px 12px;
+        }
+        
+        .social-icons {
+            margin-top: 12px;
+        }
+        
+        .social-icons a {
+            margin: 0 4px;
+        }
+    }
+</style>
+
+<div>
+    <div class="position-relative">
+        <div>
+            {{ if eq .Type "tags" }}
+            <div class="TableObject border-bottom border-gray-light py-3">
+                <div class="user-repo-search-results-summary TableObject-item TableObject-item--primary v-align-top">
+                    <strong>{{ len .Pages }}</strong> results for <strong>{{ .Title }}</strong>
+                </div>
+                <div class="TableObject-item text-right v-align-top">
+                    <a class="issues-reset-query text-normal d-inline-block ml-3" href="{{ .Site.BaseURL }}/post/">
+                        <svg class="octicon octicon-x issues-reset-query-icon mt-1" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                            <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+                        </svg>
+                        Clear filter
+                    </a>
+                </div>
+            </div>
+            {{ end }}
+
+            <!-- Grid container -->
+            <div class="team-grid">
+                {{ range sort .Pages "Params.order" "asc" }}
+                <!-- Team Card -->
+                <div class="team-card">
+                    <div class="Box box-shadow-medium text-center d-flex flex-column">
+                        <a href="{{ .Permalink }}">
+                            <!-- Profile Picture with sprite or single image -->
+                            {{ if .Params.img }}
+                                {{ $spritePath := printf "/images/sprites/%s-sprite.jpg" .Params.init }}
+                                {{ $spriteExists := fileExists (printf "static%s" $spritePath) }}
+                                
+                                {{ if $spriteExists }}
+                                <div
+                                    data-sprite="true"
+                                    style="background-image: url('{{ $spritePath }}'); background-position: 50% 50%;"
+                                    class="profile-pic"
+                                    alt="Profile picture of {{ .Params.firstname }} {{ .Params.lastname }}">
+                                </div>
+                                {{ else }}
+                                <!-- Non-sprite image: show static centered image -->
+                                <div
+                                    style="background-image: url('{{ .Params.img }}')"
+                                    class="profile-pic single-image"
+                                    alt="Profile picture of {{ .Params.firstname }} {{ .Params.lastname }}">
+                                </div>
+                                {{ end }}
+                            {{ else }}
+                            <div
+                                style="background-image: url('https://www.gravatar.com/avatar/{{ .Params.init | md5 }}?d=identicon&s=200')"
+                                class="profile-pic single-image"
+                                alt="Default Avatar">
+                            </div>
+                            {{ end }}
+                        </a>
+
+                        <div class="box-content">
+                            <a href="{{ .Permalink }}">
+                                <!-- Name -->
+                                <h3 class="f4">{{ .Params.firstname }} {{ .Params.lastname }}</h3>
+                                <!-- Position / Title -->
+                                {{ if .Params.position }}
+                                <p class="text-gray f6">{{ .Params.position }}</p>
+                                {{ end }}
+                            </a>
+
+                            <!-- Social Links -->
+                            <div class="d-flex flex-justify-center mt-2 social-icons">
+                                {{ if .Params.linkedin }}
+                                <a href="https://www.linkedin.com/in/{{ .Params.linkedin }}" target="_blank" class="mr-2">
+                                    <img src="{{ .Site.BaseURL }}/images/linkedinb.png" alt="LinkedIn" width="20">
+                                </a>
+                                {{ end }}
+
+                                {{ if .Params.gscholar }}
+                                <a href="https://scholar.google.com/citations?user={{ .Params.gscholar }}" target="_blank" class="mr-2">
+                                    <img src="{{ .Site.BaseURL }}/images/scholar.png" alt="Google Scholar" width="20">
+                                </a>
+                                {{ end }}
+
+                                {{ if .Params.github }}
+                                <a href="https://github.com/{{ .Params.github }}" target="_blank" class="mr-2">
+                                    <img src="{{ .Site.BaseURL }}/images/github.png" alt="GitHub" width="20">
+                                </a>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}

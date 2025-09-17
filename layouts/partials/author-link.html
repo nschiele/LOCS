@@ -1,0 +1,9 @@
+{{ $name := .name }}
+{{ $context := .context }}
+{{ $firstname := index (split $name ",") 0 | strings.TrimSpace }}
+{{ $lastname := index (split $name ",") 1 | strings.TrimSpace }}
+{{ with $context.Site.GetPage (printf "/team/%s-%s" (lower $firstname) (lower $lastname)) }}
+  <a href="{{ .RelPermalink }}">{{ $firstname }} {{ $lastname }}</a>
+{{ else }}
+  {{ $firstname }} {{ $lastname }}
+{{ end }} 

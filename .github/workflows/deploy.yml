@@ -1,0 +1,95 @@
+name: Build and Deploy Hugo Site
+
+on:
+  push:
+    branches:
+      - main
+      - master  # Support both main and master branch names
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Required to push to the compiled branch
+      pages: write
+      id-token: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for proper Hugo lastmod dates
+          submodules: recursive  # Fetch Hugo themes if they're submodules
+      
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true  # Use Hugo extended for SCSS/Sass support
+      
+      - name: Setup Node.js (if needed for theme dependencies)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: 'dirroot/package-lock.json'
+        
+      - name: Install Node.js dependencies (if package.json exists)
+        run: |
+          if [ -f "dirroot/package.json" ]; then
+            cd dirroot
+            npm ci
+            cd ..
+          fi
+      
+      - name: Update Hugo config for production
+        run: |
+          # Create a temporary config for production build
+          cp config.toml config.prod.toml
+          # Use relative baseURL for maximum portability across different domains/subpaths
+          sed -i 's|baseURL = "http://localhost:1313/"|baseURL = "/"|' config.prod.toml
+          # Enable relative URLs for better portability
+          echo 'relativeURLs = true' >> config.prod.toml
+          echo 'canonifyURLs = false' >> config.prod.toml
+      
+      - name: Build Hugo site
+        run: |
+          HUGO_ENV=production hugo --config config.prod.toml --minify --gc
+        env:
+          HUGO_ENVIRONMENT: production
+      
+      - name: List built files (for debugging)
+        run: |
+          echo "Contents of public directory:"
+          ls -la public/
+          echo "Total size:"
+          du -sh public/
+      
+      - name: Deploy to compiled branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: compiled
+          force_orphan: true  # Create clean history for compiled branch
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: |
+            Deploy site from ${{ github.ref_name }} (${{ github.sha }})
+            
+            Source commit: ${{ github.event.head_commit.message }}
+            Built on: ${{ github.run_id }}
+      
+      - name: Clean up temporary config
+        run: rm -f config.prod.toml
+      
+      - name: Summary
+        run: |
+          echo "🚀 Site successfully built and deployed to 'compiled' branch!"
+          echo "📊 Build stats:"
+          echo "- Source branch: ${{ github.ref_name }}"
+          echo "- Commit SHA: ${{ github.sha }}"
+          echo "- Build time: $(date)"
+          echo "- Hugo version: $(hugo version)"

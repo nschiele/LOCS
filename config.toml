@@ -1,0 +1,49 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "LOCS"
+theme = "github-style"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+
+[params]
+  author = "LOCS"
+  description = "Leiden Organizational Cyber Security Group"
+  email = "o.gadyatskaya@liacs.leidenuniv.nl"
+  url = "https://locs.liacs.nl/"
+  keywords = "locs, cyber security, liacs, leiden university"
+  rss = false
+  lastmod = true
+  favicon = "/images/avatar.png"
+  avatar = "/images/avatar.png"
+  headerIcon = "/images/leidenuniv.png"
+  location = "Netherlands"
+  userStatusEmoji = "👾"
+  enableGitalk = false
+  enableSearch = true
+
+  [[params.links]]
+    title = "Project C-Side"
+    href = "https://www.projectcside.nl/"
+    icon = "/images/cside.png"
+
+  [[params.links]]
+    title = "Project NimbleAI"
+    href = "https://www.nimbleai.eu/"
+    icon = "/images/nimbleai.png"
+
+  [[params.links]]
+      title = "Leiden University"
+      href = "https://www.universiteitleiden.nl/"
+      icon = "/images/leidenuniv.png"
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[outputs]
+  home = ["html", "json"]
+
+[outputFormats.json]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = false

@@ -1,0 +1,147 @@
+{{ define "publication" }}
+
+<style>
+</style>
+<div>
+    <div class="position-relative">
+        <div>
+            {{ if eq .Type "tags" }}
+            <div class="TableObject border-bottom border-gray-light py-3">
+                <div class="user-repo-search-results-summary TableObject-item TableObject-item--primary v-align-top">
+                    <strong>{{ len .Pages }}</strong>
+                    results
+                    for <strong>{{ .Title }}</strong>
+                </div>
+                <div class="TableObject-item text-right v-align-top">
+                    <a class="issues-reset-query text-normal d-inline-block ml-3" href="{{ .Site.BaseURL }}/post/">
+                        <svg class="octicon octicon-x issues-reset-query-icon mt-1" viewBox="0 0 16 16" version="1.1" width="16"
+                             height="16">
+                            <path fill-rule="evenodd"
+                                  d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                            </path>
+                        </svg>
+                        Clear filter
+                    </a>
+                </div>
+            </div>
+            {{ end }}
+            <ul>
+                {{ range .Paginator.Pages }}
+                <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+                    <div class="col-12 d-inline-block">
+                        <div class="d-inline-block mb-1">
+                            <h3 style="word-break: break-word; overflow-wrap: break-word;">
+                                <a href="{{ .Params.link | default .Params.doi }}" style="word-break: break-word; overflow-wrap: break-word;">{{ .Title }}</a>
+                            </h3>
+                        </div>
+
+                        <div>
+                            <div class="col-12 d-inline-block text-gray">
+                                {{ if .Params.authors }}
+                                    {{ range $i, $author := .Params.authors }}
+                                        {{- if gt $i 0 }}, {{ end -}}
+                                        {{ $linked := false }}
+                                        {{ $authorLower := lower $author }}
+                                        {{/* Try to find team member by lastname match */}}
+                                        {{ range where $.Site.RegularPages "Section" "team" }}
+                                            {{ $teamLastname := lower .Params.lastname }}
+                                            {{ if eq $teamLastname $authorLower }}
+                                                <a href="{{ .RelPermalink }}">{{ .Params.firstname }} {{ .Params.lastname }}</a>
+                                                {{ $linked = true }}
+                                                {{ break }}
+                                            {{ end }}
+                                        {{ end }}
+                                        {{/* If no match found, display as plain text */}}
+                                        {{ if not $linked }}{{ $author }}{{ end }}
+                                    {{ end }}
+                                {{ end }}
+
+                                {{ if .Params.journal }}
+                                    - {{ .Params.journal }}
+                                {{ end }}
+
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                                <div class="BtnGroup">
+                                    {{ if .Params.pdf }}
+                                    <a rel="nofollow" class="btn BtnGroup-item octicon btn-primary" href="{{ .Params.pdf }}">
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M11.25 9.331V.75a.75.75 0 0 1 1.5 0v8.58l1.949-2.11A.75.75 0 1 1 15.8 8.237l-3.25 3.52a.75.75 0 0 1-1.102 0l-3.25-3.52A.75.75 0 1 1 9.3 7.22l1.949 2.111Z"></path><path d="M2.5 3.75v11.5c0 .138.112.25.25.25h18.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25h-5.5a.75.75 0 0 1 0-1.5h5.5c.966 0 1.75.784 1.75 1.75v11.5A1.75 1.75 0 0 1 21.25 17h-6.204c.171 1.375.805 2.652 1.769 3.757A.752.752 0 0 1 16.25 22h-8.5a.75.75 0 0 1-.566-1.243c.965-1.105 1.599-2.382 1.77-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75C1 2.784 1.784 2 2.75 2h5.5a.75.75 0 0 1 0 1.5h-5.5a.25.25 0 0 0-.25.25ZM10.463 17c-.126 1.266-.564 2.445-1.223 3.5h5.52c-.66-1.055-1.098-2.234-1.223-3.5Z"></path></svg>-->
+                                        <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="m4.927 5.427 2.896 2.896a.25.25 0 0 0 .354 0l2.896-2.896A.25.25 0 0 0 10.896 5H8.75V.75a.75.75 0 1 0-1.5 0V5H5.104a.25.25 0 0 0-.177.427Z"></path><path d="M1.573 2.573a.25.25 0 0 0-.073.177v7.5a.25.25 0 0 0 .25.25h12.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-3a.75.75 0 1 1 0-1.5h3A1.75 1.75 0 0 1 16 2.75v7.5A1.75 1.75 0 0 1 14.25 12h-3.727c.099 1.041.52 1.872 1.292 2.757A.75.75 0 0 1 11.25 16h-6.5a.75.75 0 0 1-.565-1.243c.772-.885 1.192-1.716 1.292-2.757H1.75A1.75 1.75 0 0 1 0 10.25v-7.5A1.75 1.75 0 0 1 1.75 1h3a.75.75 0 0 1 0 1.5h-3a.25.25 0 0 0-.177.073ZM6.982 12a5.72 5.72 0 0 1-.765 2.5h3.566a5.72 5.72 0 0 1-.765-2.5H6.982Z"></path></svg>
+                                        Download
+                                    </a>
+                                    {{ end }}
+                                    {{ if .Params.doi }}
+                                    <a rel="nofollow" class="btn BtnGroup-item octicon" href="{{ .Params.doi }}" style="word-break: break-word; overflow-wrap: break-word;">
+<!--                                        <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M2.75 3.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 13H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 14.543V13H2.75A1.75 1.75 0 0 1 1 11.25v-7.5C1 2.784 1.784 2 2.75 2h5.5a.75.75 0 0 1 0 1.5ZM16 1.25v4.146a.25.25 0 0 1-.427.177L14.03 4.03l-3.75 3.75a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l3.75-3.75-1.543-1.543A.25.25 0 0 1 11.604 1h4.146a.25.25 0 0 1 .25.25Z"></path></svg>-->
+                                        <span style="word-break: break-word; overflow-wrap: break-word;">DOI: {{ .Params.doi | replaceRE "^https://doi.org/" "" }}</span>
+                                    </a>
+                                    {{ end }}
+
+                                    {{ if .Params.sourcecode }}
+                                    <a rel="nofollow" class="btn BtnGroup-item octicon" href="{{ .Params.sourcecode }}">
+                                        <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path></svg>
+                                        Source code
+                                    </a>
+                                    {{ end }}
+
+                                    {{ if .Params.dataset }}
+                                    <a rel="nofollow" class="btn BtnGroup-item octicon text-white bg-purple" href="{{ .Params.dataset }}">
+                                        <svg class="octicon text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M1 3.5c0-.626.292-1.165.7-1.59.406-.422.956-.767 1.579-1.041C4.525.32 6.195 0 8 0c1.805 0 3.475.32 4.722.869.622.274 1.172.62 1.578 1.04.408.426.7.965.7 1.591v9c0 .626-.292 1.165-.7 1.59-.406.422-.956.767-1.579 1.041C11.476 15.68 9.806 16 8 16c-1.805 0-3.475-.32-4.721-.869-.623-.274-1.173-.62-1.579-1.04-.408-.426-.7-.965-.7-1.591Zm1.5 0c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 5.205 6.353 5.5 8 5.5c1.646 0 3.101-.295 4.118-.742.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55 0-.133-.058-.318-.282-.551-.227-.237-.591-.483-1.101-.707C11.102 1.795 9.647 1.5 8 1.5c-1.646 0-3.101.295-4.118.742-.508.224-.873.471-1.1.708-.224.232-.282.417-.282.55Zm0 4.5c0 .133.058.318.282.551.227.237.591.483 1.101.707C4.898 9.705 6.353 10 8 10c1.646 0 3.101-.295 4.118-.742.508-.224.873-.471 1.1-.708.224-.232.282-.417.282-.55V5.724c-.241.15-.503.286-.778.407C11.475 6.68 9.805 7 8 7c-1.805 0-3.475-.32-4.721-.869a6.15 6.15 0 0 1-.779-.407Zm0 2.225V12.5c0 .133.058.318.282.55.227.237.592.484 1.1.708 1.016.447 2.471.742 4.118.742 1.647 0 3.102-.295 4.117-.742.51-.224.874-.47 1.101-.707.224-.233.282-.418.282-.551v-2.275c-.241.15-.503.285-.778.406-1.247.549-2.917.869-4.722.869-1.805 0-3.475-.32-4.721-.869a6.327 6.327 0 0 1-.779-.406Z"></path></svg>
+                                        Dataset
+                                    </a>
+                                    {{ end }}
+
+                                </div>
+
+                                {{ if .Summary }}
+                                    Summary: {{ .Summary | safeHTML }}
+                                {{ end }}
+                            </div>
+                        </div>
+
+
+                        <div class="f6 text-gray mt-2">
+                            {{ with .Params.tags }}
+                            {{ range $tag := (first 5 .) }}
+                            <a class="muted-link mr-3" href="{{ relURL (print " /tags/" . | urlize) }}">
+                            <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                                <path fill-rule="evenodd"
+                                      d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                                </path>
+                            </svg>
+                            {{ $tag }}
+                            </a>
+                            {{ end }}
+                            {{ end }}
+
+                            Published at {{ .Date.Format "2 January 2006" }}
+
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+            <div class="paginate-container">
+                <div class="BtnGroup">
+                    {{ if .Paginator.HasPrev }}
+                    <a rel="nofollow" class="btn btn-outline BtnGroup-item" href="{{ .Paginator.Prev.URL }}">Previous</a>
+                    {{ else }}
+                    <button class="btn btn-outline BtnGroup-item" disabled="disabled">Previous</button>
+                    {{ end }}
+                    {{ if .Paginator.HasNext }}
+                    <a rel="nofollow" class="btn btn-outline BtnGroup-item" href="{{ .Paginator.Next.URL }}">Next</a>
+                    {{ else }}
+                    <button class="btn btn-outline BtnGroup-item" disabled="disabled">Next</button>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{ end }}
