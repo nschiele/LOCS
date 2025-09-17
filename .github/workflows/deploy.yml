@@ -29,20 +29,6 @@ jobs:
           hugo-version: 'latest'
           extended: true  # Use Hugo extended for SCSS/Sass support
       
-      - name: Setup Node.js (if needed for theme dependencies)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'dirroot/package-lock.json'
-        
-      - name: Install Node.js dependencies (if package.json exists)
-        run: |
-          if [ -f "dirroot/package.json" ]; then
-            cd dirroot
-            npm ci
-            cd ..
-          fi
       
       - name: Update Hugo config for production
         run: |

@@ -41,14 +41,6 @@ sed -i 's|baseURL = "http://localhost:1313/"|baseURL = "/"|' config.prod.toml
 echo 'relativeURLs = true' >> config.prod.toml
 echo 'canonifyURLs = false' >> config.prod.toml
 
-# Install Node.js dependencies if needed
-if [ -f "dirroot/package.json" ]; then
-    echo -e "${YELLOW}📦 Installing Node.js dependencies...${NC}"
-    cd dirroot
-    npm install
-    cd ..
-fi
-
 # Build the site
 echo -e "${YELLOW}🏗️  Building Hugo site...${NC}"
 HUGO_ENV=production hugo --config config.prod.toml --minify --gc
