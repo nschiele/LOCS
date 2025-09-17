@@ -234,7 +234,7 @@
                     <strong>{{ len .Pages }}</strong> results for <strong>{{ .Title }}</strong>
                 </div>
                 <div class="TableObject-item text-right v-align-top">
-                    <a class="issues-reset-query text-normal d-inline-block ml-3" href="{{ .Site.BaseURL }}/post/">
+                    <a class="issues-reset-query text-normal d-inline-block ml-3" href="/post/">
                         <svg class="octicon octicon-x issues-reset-query-icon mt-1" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                             <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
                         </svg>
@@ -294,19 +294,19 @@
                             <div class="d-flex flex-justify-center mt-2 social-icons">
                                 {{ if .Params.linkedin }}
                                 <a href="https://www.linkedin.com/in/{{ .Params.linkedin }}" target="_blank" class="mr-2">
-                                    <img src="{{ .Site.BaseURL }}/images/linkedinb.png" alt="LinkedIn" width="20">
+                                    <img src="/images/linkedinb.png" alt="LinkedIn" width="20">
                                 </a>
                                 {{ end }}
 
                                 {{ if .Params.gscholar }}
                                 <a href="https://scholar.google.com/citations?user={{ .Params.gscholar }}" target="_blank" class="mr-2">
-                                    <img src="{{ .Site.BaseURL }}/images/scholar.png" alt="Google Scholar" width="20">
+                                    <img src="/images/scholar.png" alt="Google Scholar" width="20">
                                 </a>
                                 {{ end }}
 
                                 {{ if .Params.github }}
                                 <a href="https://github.com/{{ .Params.github }}" target="_blank" class="mr-2">
-                                    <img src="{{ .Site.BaseURL }}/images/github.png" alt="GitHub" width="20">
+                                    <img src="/images/github.png" alt="GitHub" width="20">
                                 </a>
                                 {{ end }}
                             </div>
